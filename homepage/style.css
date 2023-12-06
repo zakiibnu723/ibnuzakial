@@ -1,0 +1,273 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+    border-collapse: collapse;
+	border-spacing: 0;
+}
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --x: 0;
+    --y: 0;
+    --scrollY: 0;
+}
+
+
+body {
+    font-family: "archivo", sans-serif;
+    /* height: 2000px; */
+    background-color: black;
+    overflow: hidden;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+
+.navbar {
+    position: fixed !important;
+    top: 24px;
+    right: 84px;
+    z-index: 99;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+    & ul {
+        display: flex;
+        gap: 40px;
+        justify-content: end;
+
+        & li a {
+            color: white;
+            font-size: 11px;
+            transition: all .2s ease-in-out;
+        
+            &:hover {
+                color: grey;
+            }
+        }
+    }
+}
+
+.spotlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    /* min-height: 7000px; */
+    pointer-events: none;
+    background: radial-gradient(circle at var(--x) var(--y), transparent 0.3%, rgba(0, 0, 0, 0.7) 50%);
+    /* backdrop-filter: brightness(110%); */
+    z-index: 9999;
+    /* backdrop-filter: brightness(200%); */
+}
+
+.smooth-scroll-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: fit-content; */
+    /* overflow: hidden; */
+    z-index: 9;
+}
+.container {
+    width: 100%;
+    /* height: 3000px; */
+    /* min-height: 100vh;   */
+}
+
+.home {
+    background-color: black;
+    width: 100%;
+    min-height: 700px;
+    /* min-height: 100vh; */
+    display: grid;
+    background-size: cover;
+    background-image: url(background/1.jpg);
+    background-position: 0 calc(var(--scrollY) / 1.8);
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    transition: all -1s ease-in-out;
+
+
+    .hero {
+        align-self: center;
+        text-align: center;
+        position: relative;
+        bottom: 45px;
+
+        .title h1 {
+            font-family: "archivo", sans-serif;
+            font-size: 84px;
+            color: #ffffff;
+            font-weight: 800;
+            letter-spacing: -2PX;
+            /* transition: all .7s ease-in-out; */
+            text-shadow: var(--shadowX) var(--shadowY) 9px rgba(0, 0, 0, 0.7);
+            /* : radial-gradient(circle at 50% 50%, transparent 1%, rgba(0, 0, 0, 0.9) 50%); */
+
+        }
+        
+        .title h3 {
+            font-family: "archivo", sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 0;
+            color: rgba(0, 0, 0, 0);
+            -webkit-text-stroke: 1px #ffffff;
+            /* transition: all .7s ease-in-out; */
+            text-shadow: var(--shadowX) var(--shadowY) 9px rgba(0, 0, 0, 0.7);
+
+        }
+
+        
+    }
+}
+
+.about {
+    /* margin-top: 700px; */
+    height: 1200px;
+    background-color: black;
+    background-image: url(background/1665667851624\(3\).jpg);
+    background-size: cover;
+    background-position: 0 calc(var(--scrollY) / 1.8 + 1950px);
+    filter: brightness(90%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* place-items: center; */
+    padding: 0 30% 0 10% ;
+    text-align: left;
+
+    & h1 {
+        color: white;
+        font-size: 40px;
+        font-weight: 600;
+        transform: translateY(calc(var(--scrollY) / 3 + 100px));
+        /* margin-bottom: 50px; */
+    }
+
+    & p {
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        transform: translateY(calc(var(--scrollY) / 6 + 300px));
+
+    }
+
+}
+
+/* .about {
+    margin-top: 600px;
+    height: 1300px;
+    background-color: black;
+    background-image: url(background/1665667851624\(1\).jpg);
+    background-size: cover;
+    background-position: 230px 220px;
+    width: 100%;
+
+} */
+
+
+.skills {
+    /* margin-top: 700px; */
+    background-image: url(background/1665667851624\(2\).jpg);
+    width: 100%;
+    height: 1000px;
+    background-color: black;
+    background-position: 0 calc(var(--scrollY) / 1.8 + 900px);
+    box-shadow: inset 0px -60px 100px black;
+    filter: brightness(60%);
+    display: grid;
+    place-items: center;
+
+    & h1 {
+        color: white;
+        font-size: 40px;
+        font-weight: 600;
+        transform: translateY(calc(var(--scrollY) / 5 - 400px));
+    }
+}
+
+.buffer-section {
+    height: 1000px;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    z-index: 0;
+    /* display: grid;
+    place-items: center; */
+
+    & p {
+        /* transform: translate(
+            calc(var(--scrollY) * 1.5 - 3800px), 
+            calc(var(--scrollY) - 2450px)
+        ); */
+        position: relative;
+        top: 20%;
+        font-size: 48px;
+        font-weight: 600;
+        color: white;
+        filter: brightness(60%);
+    }
+}
+
+
