@@ -1,5 +1,6 @@
 const html = document.documentElement;
 const spotlight = document.querySelector('.spotlight');
+const home = document.querySelector('.home');
 const about = document.querySelector('.about')
 const buffer = document.querySelector('.buffer-section');
 const bufferText = buffer.querySelector('p');
@@ -52,7 +53,6 @@ requestAnimationFrame(updateStyle);
 requestAnimationFrame(raf)
 
 function bufferAction(scrollPosition, bufferPosition ) {
-
     function myFunction(x) {
         if (x.matches) { // If media query matches
             // 450 & 1700 is just adjustment of buffer action. try to delete it if you want see the utility
@@ -93,6 +93,7 @@ function bufferAction(scrollPosition, bufferPosition ) {
 
     x.addEventListener("change", function() {
         myFunction(x);
+        changeHomeBg(x)
     });
 
     // console.log((scrollPosition - bufferPosition)/100)
@@ -102,6 +103,16 @@ function bufferAction(scrollPosition, bufferPosition ) {
 window.addEventListener('beforeunload', function() {
     window.scrollTo(0, 0);
 });
+
+window.addEventListener('resize', function() {
+    if (this.window.innerWidth <= 599) {
+        home.style.backgroundImage = 'url(./background/hero-potrait.jpg)'
+    } else {
+        home.style.backgroundImage = 'url(./background/imgonline-com-ua-CompressToSize-kcFkYjkZG5I.jpg)'
+    }
+})
+
+
 
 
 let mouseX = 350;

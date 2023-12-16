@@ -150,15 +150,6 @@ body {
 
     /* overscroll-behavior: contain; */
 
-    .home-background {
-      /* position: absolute; */
-      width: 100%;
-      height: 100%;
-      z-index: 9;
-      object-fit: cover;
-    }
-
-
     .title {
         align-self: center;
         text-align: center;
@@ -212,7 +203,7 @@ body {
     background-image: url(./background/imgonline-com-ua-CompressToSize-pGWCaA7it0B4Rakk.jpg);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: 50% calc(var(--scrollY) * 0.94 - var(--aboutPost) - 120px);
+    background-position: 50% calc(var(--scrollY) * 0.94 - var(--aboutPost) - 90px);
     perspective-origin: 600px calc(350PX + var(--scrollY) - 800px);
     perspective: 1200px;
   
@@ -508,7 +499,7 @@ body {
     }
 
     .home {
-        background-position: -450px calc(var(--scrollY) * 0.96 - 5px) !important;
+        background-position: -50px calc(var(--scrollY) * 0.96 - 5px) !important;
         height: 1000px;
 
         .title {
@@ -531,14 +522,16 @@ body {
         height: 3200px;
         background-position: 65% calc(var(--scrollY) * 0.97 - var(--aboutPost) - 36vh);
         border-top: 5px solid black;
+        perspective-origin: 0px calc(350PX + var(--scrollY) - 900px);
+        perspective: 900px;
 
         .text3d-container {
-            width: 228%;
+            width: 210%;
             transform: 
-                rotateY(52deg)
-                rotateX(4deg)
-                translateZ(-850px)
-                translateX(380px)
+                rotateY(47deg)
+                rotateX(0deg)
+                translateZ(-158px)
+                translateX(-24px)
                 translateY(calc(var(--scrollY) / 10 + 100px));
 
         }
