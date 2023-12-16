@@ -23,7 +23,7 @@ const lenis = new Lenis({
 // let bufferPosition = buffer.getBoundingClientRect()
 // let aboutPosition = about.getBoundingClientRect()
 // let workPosition = work.getBoundingClientRect()
-let bufferPosition = 3700;
+let bufferPosition = 3700; //bufferPosition = height(home + about + margin-top buffer)
 
 let scrollPosition = 0;
 lenis.on('scroll', (e) => {
@@ -37,7 +37,7 @@ lenis.on('scroll', (e) => {
     //   html.clientHeight, html.scrollHeight, html.offsetHeight);
     // console.log(height)
     // console.log(bufferPosition.top)
-    // console.log(scrollPosition)
+    console.log(scrollPosition)
     bufferAction(scrollPosition, bufferPosition)
 })
 
@@ -55,6 +55,7 @@ function bufferAction(scrollPosition, bufferPosition ) {
 
     function myFunction(x) {
         if (x.matches) { // If media query matches
+            // 450 & 1700 is just adjustment of buffer action. try to delete it if you want see the utility
             if (scrollPosition > (bufferPosition + 450) && scrollPosition < (bufferPosition + 1700)) {
                 spotlight.classList.add('action');
                 // buffer.querySelector('p').style.display = 'block';
@@ -70,7 +71,8 @@ function bufferAction(scrollPosition, bufferPosition ) {
 
 
         } else {
-            if (scrollPosition > (bufferPosition - 450) && scrollPosition < (bufferPosition + 1200)) {
+            // 450 & 1300 is just adjustment of buffer action. try to delete it if you want see the utility
+            if (scrollPosition > (bufferPosition - 450) && scrollPosition < (bufferPosition + 1300)) {
                 spotlight.classList.add('action');
                 // buffer.querySelector('p').style.display = 'block';
                 // spotlight.style.background = 'radial-gradient(circle at calc(var(--scrollY) * 1.2 - var(--bufferPost)) 50%, transparent 0.6%, rgba(0, 0, 0, 0.6) 40%)';

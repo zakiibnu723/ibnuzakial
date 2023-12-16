@@ -63,10 +63,10 @@ html {
     --y: 250px;
     --shadowX: 0px;
     --shadowY: 0px;
-    --scrollY: 0px;
-    --aboutPost: 700px;
-    --bufferPost: 3700px;
-    --workPost: 5000px;
+    --scrollY: 0px; 
+    --aboutPost: 700px; /* height(home) */
+    --bufferPost: 3700px; /* height(home + about) */
+    --workPost: 5000px; /* height(home + about + buffersection */
 }
 
 
@@ -143,7 +143,7 @@ body {
     display: grid;
     transition: all -1s ease-in-out;
     overflow: hidden;
-    background-image: url(./background/imgonline-com-ua-CompressToSize-kcFkYjkZG5I.webp);
+    background-image: url(./background/imgonline-com-ua-CompressToSize-kcFkYjkZG5I.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     /* background-position: 0 calc(var(--scrollY) * 0.8); */
@@ -209,7 +209,7 @@ body {
     /* padding: 0 30% 0 10% ; */
     box-shadow: inset 0px -60px 100px black;
     text-align: left;
-    background-image: url(./background/imgonline-com-ua-CompressToSize-pGWCaA7it0B4Rakk.webp);
+    background-image: url(./background/imgonline-com-ua-CompressToSize-pGWCaA7it0B4Rakk.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50% calc(var(--scrollY) * 0.94 - var(--aboutPost) - 120px);
@@ -278,36 +278,6 @@ body {
 
 }
 
-/* .about {
-    margin-top: 600px;
-    height: 1300px;
-    background-color: black;
-    background-image: url(background/1665667851624\(1\).jpg);
-    background-size: cover;
-    background-position: 230px 220px;
-    width: 100%;
-
-} */
-
-
-/* .skills {
-    background-image: url(background/1665667851624\(2\).jpg);
-    width: 100%;
-    height: 1000px;
-    background-color: black;
-    background-position: 0 calc(var(--scrollY) / 1.8 + 900px);
-    box-shadow: inset 0px -60px 100px black;
-    filter: brightness(60%);
-    display: grid;
-    place-items: center;
-
-    & h1 {
-        color: white;
-        font-size: 40px;
-        font-weight: 600;
-        transform: translateY(calc(var(--scrollY) / 5 - 400px));
-    }
-} */
 
 .buffer-section {
     /* transform: translateY(400px); */
@@ -533,12 +503,12 @@ body {
     }
 
     .spotlight {
-        background: radial-gradient(circle at 60% 30%, transparent 0.6%, rgba(0, 0, 0, 0.5) 50%);
+        background: radial-gradient(circle at 70% 40%, transparent 0.6%, rgba(0, 0, 0, 0.5) 50%);
         
     }
 
     .home {
-        background-position: -200px calc(var(--scrollY) * 0.8) !important;
+        background-position: -450px calc(var(--scrollY) * 0.96 - 5px) !important;
         height: 1000px;
 
         .title {
@@ -560,6 +530,7 @@ body {
         background-size: 1200px;
         height: 3200px;
         background-position: 65% calc(var(--scrollY) * 0.97 - var(--aboutPost) - 36vh);
+        border-top: 5px solid black;
 
         .text3d-container {
             width: 228%;
