@@ -138,7 +138,7 @@ body {
     background-color: rgb(236, 236, 236);
     /* position: relative; */
     width: 100%;
-    height: 700px;
+    height: 110vh;
     /* inset: -150px 0 0 !important; */
     display: grid;
     transition: all -1s ease-in-out;
@@ -197,7 +197,7 @@ body {
 .about {
     /* margin-top: 700px; */
     position: relative;
-    height: 2500px;
+    height: 420vh;
     background-color: black;
     /* filter: brightness(90%); */
     width: 100%;
@@ -210,9 +210,9 @@ body {
     box-shadow: inset 0px -60px 100px black;
     text-align: left;
     background-image: url(./background/imgonline-com-ua-CompressToSize-pGWCaA7it0B4Rakk.webp);
-    background-size: contain;
+    background-size: 120%;
     background-repeat: no-repeat;
-    background-position: 50% calc(var(--scrollY) * 0.94 - var(--aboutPost) - 120px);
+    background-position: 50% calc(var(--scrollY) * 0.94 - var(--aboutPost) - 20vh);
     perspective-origin: 600px calc(350PX + var(--scrollY) - 800px);
     perspective: 1200px;
   
@@ -312,7 +312,7 @@ body {
 .buffer-section {
     /* transform: translateY(400px); */
     margin-top: 500px;
-    height: 1300px;
+    height: 220vh;
     width: 100%;
     background-color: rgb(0, 0, 0);
     z-index: 99;
