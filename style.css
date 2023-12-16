@@ -538,7 +538,7 @@ body {
 
     .home {
         background-position: -200px calc(var(--scrollY) * 0.8) !important;
-        height: 140dvh;
+        height: 1000px;
 
         .title {
             /* bottom: 70px; */
@@ -557,7 +557,7 @@ body {
 
     .about {
         background-size: 1200px;
-        height: 450dvh;
+        height: 3200px;
         background-position: 65% calc(var(--scrollY) * 0.97 - var(--aboutPost) - 36vh);
 
         .text3d-container {
