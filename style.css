@@ -198,7 +198,6 @@ body {
     padding: 30%;
     /* place-items: center; */
     /* padding: 0 30% 0 10% ; */
-    box-shadow: inset 0px -60px 100px black;
     text-align: left;
     background-image: url(./background/imgonline-com-ua-CompressToSize-pGWCaA7it0B4Rakk.jpg);
     background-size: contain;
@@ -208,14 +207,19 @@ body {
     perspective: 1200px;
   
 
-/* 
-    & img {
-      position: absolute;
-      width: 100%;
-      top: 0px;
-      bottom: 0;
-      z-index: 0;
-    } */
+
+    .layer {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        box-shadow: inset 0px -60px 100px black;
+        background-image: url(./background/layer.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% calc(var(--scrollY) * 0.94 - var(--aboutPost) - 90px);
+    }
 
     .text3d-container { 
         /* margin: 20%; */
