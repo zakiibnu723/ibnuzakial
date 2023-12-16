@@ -64,9 +64,9 @@ html {
     --shadowX: 0px;
     --shadowY: 0px;
     --scrollY: 0px;
-    --aboutPost: 0px;
-    --bufferPost: 0px;
-    --workPost: 0px;
+    --aboutPost: 700px;
+    --bufferPost: 3700px;
+    --workPost: 5000px;
 }
 
 
@@ -527,6 +527,7 @@ body {
 
 
 @media screen and (max-width: 599px) {
+    
     .navbar {
         right: 25%;
     }
@@ -554,7 +555,7 @@ body {
             }
         }
     }
-
+    
     .about {
         background-size: 1200px;
         height: 3200px;

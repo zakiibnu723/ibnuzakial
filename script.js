@@ -20,25 +20,25 @@ const lenis = new Lenis({
     })
 
 
-let bufferPosition = buffer.getBoundingClientRect()
-let aboutPosition = about.getBoundingClientRect()
-let workPosition = work.getBoundingClientRect()
-
+// let bufferPosition = buffer.getBoundingClientRect()
+// let aboutPosition = about.getBoundingClientRect()
+// let workPosition = work.getBoundingClientRect()
+let bufferPosition = 3700;
 
 let scrollPosition = 0;
 lenis.on('scroll', (e) => {
     scrollPosition = e.animatedScroll;
     html.style.setProperty('--scrollY', scrollPosition + 'px')
-    html.style.setProperty('--bufferPost', bufferPosition.top + 'px')
-    html.style.setProperty('--aboutPost', aboutPosition.top + 'px');
-    html.style.setProperty('--workPost', workPosition.top + 'px');
+    // html.style.setProperty('--aboutPost', aboutPosition.top + 'px');
+    // html.style.setProperty('--bufferPost', bufferPosition.top + 'px')
+    // html.style.setProperty('--workPost', workPosition.top + 'px');
 
     // const height = Math.max(body.scrollHeight, body.offsetHeight,
     //   html.clientHeight, html.scrollHeight, html.offsetHeight);
     // console.log(height)
     // console.log(bufferPosition.top)
     // console.log(scrollPosition)
-    bufferAction(scrollPosition, bufferPosition.top)
+    bufferAction(scrollPosition, bufferPosition)
 })
 
 function raf(time) {
