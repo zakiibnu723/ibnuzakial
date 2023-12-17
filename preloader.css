@@ -12,7 +12,7 @@
     & video {
         /* display: none; */
         object-fit: cover;
-        mix-blend-mode: lighten;
+        filter: contrast(1.2);
     }
 }
 
