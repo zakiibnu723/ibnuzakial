@@ -344,7 +344,7 @@ body {
         grid-area: b;
         /* position: relative; */
         transform: translateY(calc(var(--scrollY) - var(--workPost)));
-        perspective-origin: 800px -150px;
+        perspective-origin: 500px -150px;
         perspective: 800px;
 
         & div {
@@ -354,9 +354,9 @@ body {
             transform: 
                     rotateY(-30deg)
                     rotateX(10deg)
-                    /* translateX(00px) */
-                    translateY(-154px)
-                    translateZ(320px);
+                    translateX(-300px)
+                    translateY(-140px)
+                    translateZ(428px);
 
             .shadow {
                 position: absolute;
@@ -385,7 +385,7 @@ body {
                     /* translateY(-70px)
                     translateZ(550px); */
                 
-                & video {
+                & video, & img {
                     width: 15.5vw;
                     transform: translateX(-50px);
                 }   
@@ -597,6 +597,7 @@ body {
             position: absolute;
             grid-area: a;
             transform: translateY(calc(var(--scrollY) - var(--workPost) - 550px));
+            perspective-origin: 800px -150px;
 
             & div {
                 transform: 
