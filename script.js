@@ -1,10 +1,56 @@
+const navLinks = document.querySelectorAll('.nav a');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        let linkId = link.getAttribute('href');
+        let positionY;
+        let homePost = 0
+        let aboutPost = 950
+        let workPost = 5400
+        let contactPost = 8400
+
+        if (windowWidth <= 599) {
+            aboutPost = 1400
+            workPost = 6000
+            contactPost = 9400
+        } 
+
+        switch (linkId) {
+            case 'home': 
+                positionY = homePost;
+                break;
+
+            case '#about':
+                positionY = aboutPost;
+                break;
+            
+            case '#work':
+                positionY = workPost;
+                break;
+
+            case '#contact':
+                break;
+                
+            default:
+                break;
+            }
+        
+        setTimeout(function() {
+            window.scrollTo(0, positionY)
+        }, 700)
+     })
+})
+
+
+
 const html = document.documentElement;
 const spotlight = document.querySelector('.spotlight');
-const home = document.querySelector('.home');
-const about = document.querySelector('.about')
+const home = document.querySelector('#home');
+const about = document.querySelector('#about')
 const buffer = document.querySelector('.buffer-section');
 const bufferText = buffer.querySelector('p');
-const work = document.querySelector('.work');
+const work = document.querySelector('#work');
 const body = document.body;
 
 
@@ -24,9 +70,10 @@ const lenis = new Lenis({
 // let bufferPosition = buffer.getBoundingClientRect()
 // let aboutPosition = about.getBoundingClientRect()
 // let workPosition = work.getBoundingClientRect()
-let bufferPosition = 3700; //bufferPosition = height(home + about + margin-top buffer)
 
+let bufferPosition = 3700; //bufferPosition = height(home + about + margin-top buffer)
 let scrollPosition = 0;
+
 lenis.on('scroll', (e) => {
     scrollPosition = e.animatedScroll;
     html.style.setProperty('--scrollY', scrollPosition + 'px')
@@ -38,6 +85,7 @@ lenis.on('scroll', (e) => {
     //   html.clientHeight, html.scrollHeight, html.offsetHeight);
     // console.log(height)
     // console.log(bufferPosition.top)
+
     console.log(scrollPosition)
     bufferAction(scrollPosition, bufferPosition)
 })
@@ -108,7 +156,7 @@ document.addEventListener('DOMContentLoaded', checkViewPort)
 window.addEventListener('resize', checkViewPort)
 
 function checkViewPort() {
-    if (window.innerWidth <= 599) {
+    if (windowWidth <= 599) {
         home.style.backgroundImage = 'url(./background/hero-potrait.jpg)'
     } else {
         home.style.backgroundImage = 'url(./background/imgonline-com-ua-CompressToSize-kcFkYjkZG5I.jpg)'
@@ -151,6 +199,14 @@ function updateStyle() {
 
 
 
+
+
+
+
+
+
+
+
 function validateForm() {
 
     const name = document.getElementById('name-input').value;
@@ -177,6 +233,28 @@ function validateForm() {
 
     return returnValue;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
