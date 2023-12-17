@@ -30,6 +30,7 @@ navLinks.forEach(link => {
                 break;
 
             case '#contact':
+                positionY = contactPost;
                 break;
                 
             default:
@@ -39,6 +40,10 @@ navLinks.forEach(link => {
         setTimeout(function() {
             window.scrollTo(0, positionY)
         }, 700)
+
+        const transition = document.querySelector('.glitch-transition video');
+        // transition.style.display = 'block';
+        transition.play();
      })
 })
 
