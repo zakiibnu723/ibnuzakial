@@ -21,7 +21,7 @@ navLinks.forEach(link => {
                     break;
     
                 case '#contact':
-                    positionY =  windowWidth <= 599 ? 8400 : 9400;
+                    positionY =  windowWidth <= 599 ? 9400 : 8400;
                     break;
                     
                 default:
