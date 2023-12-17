@@ -83,27 +83,32 @@ body {
 
 
 .navbar {
+    width: 100%;
     position: fixed !important;
-    top: 24px;
-    right: 84px;
-    z-index: 99;
-    font-weight: 300;
-    letter-spacing: 1px;
+    /* top: 24px; */
+    /* right: 84px; */
     z-index: 999;
+    padding: 24px 62px;
+    display: flex;
+    justify-content: space-between;
     
     & ul {
         display: flex;
         gap: 40px;
         justify-content: end;
-
-        & li a {
-            color: white;
-            font-size: 11px;
-            transition: all .2s ease-in-out;
         
-            &:hover {
-                color: grey;
-            }
+    }
+    
+    .nav a {
+        color: white;
+        font-size: 11px;
+        mix-blend-mode: difference;
+        font-weight: 300;
+        letter-spacing: 1px;
+        transition: all .2s ease-in-out;
+    
+        &:hover {
+            color: grey;
         }
     }
 }
@@ -115,7 +120,7 @@ body {
     min-width: 100%;
     min-height: 100vh;
     /* pointer-events: none; */
-    background: radial-gradient(circle at var(--x) var(--y), transparent 0.6%, rgba(0, 0, 0, 0.6) 50%);
+    background: radial-gradient(circle at var(--x) var(--y), transparent 0.6%, rgba(0, 0, 0, 0.7) 40vw);
     /* backdrop-filter: brightness(110%); */
     z-index: 99999;
     pointer-events: none;
@@ -494,7 +499,11 @@ body {
 @media screen and (max-width: 599px) {
     
     .navbar {
-        right: 25%;
+        z-index: 999999;
+        padding: 20px 24px;
+
+        .nav a { font-size: 8px; color: rgba(255, 255, 255, 0.556); }
+        ul { gap: 24px}
     }
 
     .spotlight {
@@ -511,42 +520,47 @@ body {
             
             & h1 {
                 font-size: 40px !important;
-                text-shadow: none;
+                text-shadow: 5px 5px 9px rgba(0, 0, 0, 0.7);
             }
     
             & h3 {
                 font-size: 24px;
-                text-shadow: none;
+                text-shadow: 5px 5px 9px rgba(0, 0, 0, 0.7);
+
             }
         }
     }
     
     .about {
-        background-size: 1200px;
+        background-size: 125vh;
         height: 3200px;
-        background-position: 65% calc(var(--scrollY) * 0.97 - var(--aboutPost) - 36vh);
+        background-position: 62% calc(var(--scrollY) * 0.97 - var(--aboutPost) - 36vh);
         border-top: 5px solid black;
-        perspective-origin: 0px calc(350PX + var(--scrollY) - 900px);
+        perspective-origin: 0px calc(-1000PX + var(--scrollY) + 50vh);
         perspective: 900px;
-
+        
+        .layer {
+            background-size: 125vh;
+            background-position: 62% calc(var(--scrollY) * 0.97 - var(--aboutPost) - 36vh);
+        }
         .text3d-container {
             width: 210%;
             transform: 
-                rotateY(47deg)
+                rotateY(50deg)
                 rotateX(0deg)
                 translateZ(-158px)
-                translateX(-24px)
-                translateY(calc(var(--scrollY) / 10 + 100px));
+                translateX(-50px)
+                translateY(calc(var(--scrollY) / 5 + 100px));
 
-        }
-        & h1 {
-            font-size: 36px !important;
-        }
-
-        & p {
-            font-size: 20px !important;
-            line-height: normal;
-            letter-spacing: normal;
+                & h1 {
+                    font-size: 36px !important;
+                }
+        
+                & p {
+                    font-size: 20px !important;
+                    line-height: 32px;
+                    letter-spacing: 2px;
+                }
         }
     }
 
@@ -626,22 +640,23 @@ body {
                 margin-left: 36px;
 
                 & label {
-                    font-size: 8px;
+                    font-size: 10px;
                 }
 
                 & input {
                     width: 85%;
                     height: 36px;
-                    font-size: 12px;
+                    font-size: 14px;
                 }
 
                 .alert {
-                    font-size: 8px;
+                    font-size: 10px;
                 }
 
                 & button {
-                    width: 68px;
-                    height: 28px;
+                    width: 72px;
+                    height: 32px;
+                    padding: 8px;
                 }
             }
         }
@@ -684,6 +699,7 @@ body {
         background-size: 1500px;
         height: 3200px;
         background-position: 65% calc(var(--scrollY) * 0.97 - var(--aboutPost) - 300px);
+
 
         .text3d-container {
             width: 228%;

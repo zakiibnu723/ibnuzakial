@@ -104,21 +104,24 @@ window.addEventListener('beforeunload', function() {
     window.scrollTo(0, 0);
 });
 
-window.addEventListener('resize', function() {
-    if (this.window.innerWidth <= 599) {
+document.addEventListener('DOMContentLoaded', checkViewPort)
+window.addEventListener('resize', checkViewPort)
+
+function checkViewPort() {
+    if (window.innerWidth <= 599) {
         home.style.backgroundImage = 'url(./background/hero-potrait.jpg)'
     } else {
         home.style.backgroundImage = 'url(./background/imgonline-com-ua-CompressToSize-kcFkYjkZG5I.jpg)'
     }
-})
-
+}
 
 
 
 let mouseX = 350;
 let mouseY = 150;
-let windowWidth;
-let windowHeight;
+let windowWidth = window.innerWidth;
+let windowHeight = window.innerHeight;
+let isMouseMoveScheduled = false;
 html.addEventListener('mousemove', function(e) {
     if (!isMouseMoveScheduled) {
         isMouseMoveScheduled = true;
