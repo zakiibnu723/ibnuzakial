@@ -515,6 +515,12 @@ body {
 
 
 @media screen and (max-width: 599px) {
+
+    .preloader {
+        .dots-10 {margin-top: 40dvh;}
+        & p {font-size: 18px;}
+
+    }
     
     .navbar {
         z-index: 999999;

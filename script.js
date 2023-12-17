@@ -1,3 +1,15 @@
+const preloader = document.querySelector('.preloader');
+const transition = document.querySelector('.glitch-transition video');
+
+window.onload = function() {
+    setTimeout(function() {
+        transition.play();
+    }, 500)
+    setTimeout(function() {
+        preloader.style.display = 'none';
+    }, 1000)
+}
+
 const navLinks = document.querySelectorAll('.nav a');
 
 navLinks.forEach(link => {
@@ -32,7 +44,6 @@ navLinks.forEach(link => {
             window.scrollTo(0, positionY)
         }, 400)
 
-        const transition = document.querySelector('.glitch-transition video');
         // transition.style.display = 'block';
         transition.play();
     })
