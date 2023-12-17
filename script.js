@@ -104,7 +104,7 @@ lenis.on('scroll', (e) => {
     // console.log(height)
     // console.log(bufferPosition.top)
 
-    console.log(scrollPosition)
+    // console.log(scrollPosition)
     bufferAction(scrollPosition, bufferPosition)
 })
 
