@@ -6,32 +6,31 @@ navLinks.forEach(link => {
         let linkId = link.getAttribute('href');
         let positionY;
 
-        if (windowWidth <= 599) {
-            switch (linkId) {
-                case 'home': 
-                    positionY = windowWidth <= 599 ? 0 : 0;
-                    break;
-    
-                case '#about':
-                    positionY = windowWidth <= 599 ? 1400 : 950;
-                    break;
+        switch (linkId) {
+            case 'home': 
+                positionY = 0;
+                break;
+
+            case '#about':
+                positionY = windowWidth <= 599 ? 1400 : 950;
+                break;
+            
+            case '#work':
+                positionY = windowWidth <= 599 ? 6000 : 5400;
+                break;
+
+            case '#contact':
+                positionY =  windowWidth <= 599 ? 9400 : 8400;
+                break;
                 
-                case '#work':
-                    positionY = windowWidth <= 599 ? 6000 : 5400;
-                    break;
-    
-                case '#contact':
-                    positionY =  windowWidth <= 599 ? 9400 : 8400;
-                    break;
-                    
-                default:
-                    break;
-            }
+            default:
+                break;
         }
+        
 
         setTimeout(function() {
             window.scrollTo(0, positionY)
-        }, 700)
+        }, 400)
 
         const transition = document.querySelector('.glitch-transition video');
         // transition.style.display = 'block';
