@@ -9,45 +9,24 @@ navLinks.forEach(link => {
         if (windowWidth <= 599) {
             switch (linkId) {
                 case 'home': 
-                    positionY = 0;
+                    positionY = windowWidth <= 599 ? 0 : 0;
                     break;
     
                 case '#about':
-                    positionY = 1400;
+                    positionY = windowWidth <= 599 ? 1400 : 950;
                     break;
                 
                 case '#work':
-                    positionY = 6000;
+                    positionY = windowWidth <= 599 ? 6000 : 5400;
                     break;
     
                 case '#contact':
-                    positionY = 9400;
+                    positionY =  windowWidth <= 599 ? 8400 : 9400;
                     break;
                     
                 default:
                     break;
-                }
-        } else {
-            switch (linkId) {
-                case 'home': 
-                    positionY = 0;
-                    break;
-    
-                case '#about':
-                    positionY = 950;
-                    break;
-                
-                case '#work':
-                    positionY = 5400;
-                    break;
-    
-                case '#contact':
-                    positionY = 8400;
-                    break;
-                    
-                default:
-                    break;
-                }
+            }
         }
 
         setTimeout(function() {
@@ -104,7 +83,7 @@ lenis.on('scroll', (e) => {
     // console.log(height)
     // console.log(bufferPosition.top)
 
-    // console.log(scrollPosition)
+    console.log(scrollPosition)
     bufferAction(scrollPosition, bufferPosition)
 })
 
