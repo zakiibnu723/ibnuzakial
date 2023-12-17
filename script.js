@@ -5,38 +5,51 @@ navLinks.forEach(link => {
         e.preventDefault();
         let linkId = link.getAttribute('href');
         let positionY;
-        let homePost = 0
-        let aboutPost = 950
-        let workPost = 5400
-        let contactPost = 8400
 
         if (windowWidth <= 599) {
-            aboutPost = 1400
-            workPost = 6000
-            contactPost = 9400
-        } 
-
-        switch (linkId) {
-            case 'home': 
-                positionY = homePost;
-                break;
-
-            case '#about':
-                positionY = aboutPost;
-                break;
-            
-            case '#work':
-                positionY = workPost;
-                break;
-
-            case '#contact':
-                positionY = contactPost;
-                break;
+            switch (linkId) {
+                case 'home': 
+                    positionY = 0;
+                    break;
+    
+                case '#about':
+                    positionY = 1400;
+                    break;
                 
-            default:
-                break;
-            }
-        
+                case '#work':
+                    positionY = 6000;
+                    break;
+    
+                case '#contact':
+                    positionY = 9400;
+                    break;
+                    
+                default:
+                    break;
+                }
+        } else {
+            switch (linkId) {
+                case 'home': 
+                    positionY = 0;
+                    break;
+    
+                case '#about':
+                    positionY = 950;
+                    break;
+                
+                case '#work':
+                    positionY = 5400;
+                    break;
+    
+                case '#contact':
+                    positionY = 8400;
+                    break;
+                    
+                default:
+                    break;
+                }
+        }
+
         setTimeout(function() {
             window.scrollTo(0, positionY)
         }, 700)
@@ -44,7 +57,7 @@ navLinks.forEach(link => {
         const transition = document.querySelector('.glitch-transition video');
         // transition.style.display = 'block';
         transition.play();
-     })
+    })
 })
 
 
