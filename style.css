@@ -391,9 +391,6 @@ body {
                     transform: translateX(-50px);
                 }
 		    
-		& a {
-		    color: "light-gray";
-		}
             }
         }
     }
@@ -425,6 +422,10 @@ body {
         & p {
             color: white;
         }
+	    
+	& a {
+	    color: "light-gray";
+	}
     }
 }
 
