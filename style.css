@@ -245,7 +245,7 @@ body {
             /* rotateZ(0deg); */
             translateZ(-850px)
             translateX(300px)
-            translateY(calc(var(--scrollY) / 30 + -150px));
+            translateY(calc(var(--scrollY) / 30 + 150px));
             /* translateY(calc(var(--scrollY) / 6 + 300px)); */
             
 
@@ -424,7 +424,7 @@ body {
         }
 	    
 	& a {
-	    color: "light-gray";
+	    color: "#D3D3D3";
 	}
     }
 }
