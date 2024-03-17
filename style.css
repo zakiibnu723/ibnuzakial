@@ -387,6 +387,7 @@ body {
                 
                 & video, & img {
                     width: 15.5vw;
+		    height: 8vw;
                     transform: translateX(-50px);
                 }   
             }
