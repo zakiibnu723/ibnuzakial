@@ -523,7 +523,7 @@ body {
     }
 
     .spotlight {
-        background: radial-gradient(circle at 70% 40%, transparent 0.6%, rgba(0, 0, 0, 0.5) 50%);
+        background: radial-gradient(circle at 70% 40%, transparent 0.6%, rgba(0, 0, 0, 0.2) 50%);
         
     }
 
