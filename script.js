@@ -3,7 +3,7 @@ const transition = document.querySelector('.glitch-transition video');
 
 window.onload = function() {
     setTimeout(function() {
-        transition.hidden = "false";
+        // transition.hidden = "false";
         transition.play();
     }, 500)
     setTimeout(function() {
