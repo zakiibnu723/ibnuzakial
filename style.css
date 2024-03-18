@@ -496,6 +496,11 @@ body {
             & a {
                 font-size: 20px;
                 color: #A9A9A9;
+
+		& img {
+		    width: "20px";
+		    height: "auto";
+		}
             }
         }
     }
