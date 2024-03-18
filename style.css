@@ -245,7 +245,7 @@ body {
             /* rotateZ(0deg); */
             translateZ(-850px)
             translateX(300px)
-            translateY(calc(var(--scrollY) / 30 + 150px));
+            translateY(calc(var(--scrollY) / 30 + 300px));
             /* translateY(calc(var(--scrollY) / 6 + 300px)); */
             
 
@@ -573,7 +573,7 @@ body {
                 rotateX(0deg)
                 translateZ(-158px)
                 translateX(-50px)
-                translateY(calc(var(--scrollY) / 5 + 100px));
+                translateY(calc(var(--scrollY) / 5 + 400px));
 
                 & h1 {
                     font-size: 36px !important;
