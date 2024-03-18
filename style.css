@@ -424,7 +424,7 @@ body {
         }
 	    
 	& a {
-	    color: "#D3D3D3";
+	    color: #D3D3D3;
 	}
     }
 }
@@ -493,9 +493,9 @@ body {
             flex-direction: column;
             gap: 20px;
 
-            & div {
+            & a {
                 font-size: 20px;
-                color: white;
+                color: #D3D3D3;
             }
         }
     }
