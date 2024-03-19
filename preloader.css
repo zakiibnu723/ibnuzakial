@@ -28,7 +28,7 @@
     align-content: center;
     gap: 30px;
     background-color: black;
-    z-index: 99999;
+    z-index: 99999999999;
 
 
     /* & div {
