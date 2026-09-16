@@ -30,8 +30,9 @@ export const PORTFOLIO_DATA = {
     shortBio: "Passionate Fresh Graduate Developer specializing in modern Fullstack Web (React / TypeScript / Node.js) and Native Android (Kotlin / Jetpack Compose). Experienced in integrating open-source Hugging Face AI models into practical web & mobile applications.",
     location: "Indonesia (Open to On-site, Hybrid & Remote)",
     status: "Available for Hire",
-    email: "ibnuzakial.dev@gmail.com",
-    whatsapp: "+62 812-3456-7890",
+    email: "zakiibnu723@gmail.com",
+    whatsapp: "+62 858-6217-4003",
+    whatsappRaw: "6285862174003",
     github: "https://github.com/zakiibnu723",
     linkedin: "https://linkedin.com/in/ibnuzakial",
     stats: [

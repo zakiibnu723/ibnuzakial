@@ -9,6 +9,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { AnimatedCounter } from './AnimatedCounter';
 
 interface HeroProps {
   onOpenCv: () => void;
@@ -345,7 +346,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
                     lineHeight: 1.2,
                   }}
                 >
-                  {stat.value}
+                  <AnimatedCounter target={parseInt(stat.value) || 0} suffix="+" />
                 </div>
                 <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
                   {stat.label}

@@ -15,16 +15,33 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenCv }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [soundActive, setSoundActive] = useState(sfx.isEnabled());
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 25);
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 20);
+
+      if (currentScrollY < 30) {
+        setVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        // Scrolling down -> hide navbar
+        setVisible(false);
+        setMobileMenuOpen(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up -> show navbar
+        setVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const toggleSound = () => {
     const newState = sfx.toggle();
@@ -47,9 +64,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv }) => {
         left: 0,
         right: 0,
         zIndex: 100,
-        transition: 'all 0.3s ease',
-        padding: scrolled ? '0.6rem 0' : '0.9rem 0',
-        background: scrolled ? 'rgba(6, 7, 10, 0.92)' : 'rgba(6, 7, 10, 0.65)',
+        transform: visible ? 'translateY(0)' : 'translateY(-110%)',
+        transition: 'transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease, background 0.3s ease',
+        padding: scrolled ? '0.6rem 0' : '0.85rem 0',
+        background: scrolled ? 'rgba(6, 7, 10, 0.94)' : 'rgba(6, 7, 10, 0.75)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
@@ -57,72 +75,47 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv }) => {
     >
       <div className="container-custom" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         
-        {/* Left Side: On Mobile, Hamburger is on the left, followed by Avatar and Name */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          {/* Mobile Hamburger Button (Placed on the left as requested) */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="mobile-only-btn"
-            aria-label="Toggle navigation menu"
+        {/* Left Side: Avatar, Name & Role */}
+        <a
+          href="#hero"
+          onClick={() => sfx.playClick()}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.65rem',
+            textDecoration: 'none',
+            color: 'inherit',
+          }}
+        >
+          <div
             style={{
-              background: 'rgba(255, 255, 255, 0.06)',
-              border: '1px solid var(--border-subtle)',
-              color: 'var(--text-primary)',
-              width: '38px',
-              height: '38px',
-              borderRadius: '10px',
+              width: '34px',
+              height: '34px',
+              borderRadius: '9px',
+              background: 'linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              cursor: 'pointer',
+              boxShadow: '0 0 15px rgba(99, 102, 241, 0.35)',
+              color: '#ffffff',
+              fontWeight: 800,
+              fontSize: '0.9rem',
               flexShrink: 0,
             }}
           >
-            {mobileMenuOpen ? <X size={19} /> : <Menu size={19} />}
-          </button>
+            IZ
+          </div>
 
-          {/* Brand Logo & Name */}
-          <a
-            href="#hero"
-            onClick={() => sfx.playClick()}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.65rem',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-          >
-            <div
-              style={{
-                width: '34px',
-                height: '34px',
-                borderRadius: '9px',
-                background: 'linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 0 15px rgba(99, 102, 241, 0.35)',
-                color: '#ffffff',
-                fontWeight: 800,
-                fontSize: '0.9rem',
-                flexShrink: 0,
-              }}
-            >
-              IZ
+          <div>
+            <div style={{ fontWeight: 800, fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem', lineHeight: 1.2 }}>
+              <span>{PORTFOLIO_DATA.profile.name}</span>
+              <span className="live-indicator" style={{ width: '7px', height: '7px' }} />
             </div>
-
-            <div>
-              <div style={{ fontWeight: 800, fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem', lineHeight: 1.2 }}>
-                <span>{PORTFOLIO_DATA.profile.name}</span>
-                <span className="live-indicator" style={{ width: '7px', height: '7px' }} />
-              </div>
-              <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', lineHeight: 1.2, marginTop: '2px' }}>
-                Fullstack & Android Developer
-              </div>
+            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', lineHeight: 1.2, marginTop: '2px' }}>
+              Fullstack & Android Developer
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
 
         {/* Desktop Navigation Links */}
         <nav
@@ -154,48 +147,72 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv }) => {
           ))}
         </nav>
 
-        {/* Desktop Right Controls (Hidden on Mobile) */}
-        <div className="desktop-controls" style={{ display: 'none', alignItems: 'center', gap: '0.75rem' }}>
-          {/* Sound Toggle */}
+        {/* Right Controls: Desktop Sound/CV, Mobile Hamburger Button on RIGHT */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          
+          {/* Desktop Controls (Hidden on Mobile) */}
+          <div className="desktop-controls" style={{ display: 'none', alignItems: 'center', gap: '0.75rem' }}>
+            <button
+              onClick={toggleSound}
+              title={soundActive ? 'Sound FX Enabled (Click to Mute)' : 'Sound FX Muted (Click to Unmute)'}
+              style={{
+                background: soundActive ? 'rgba(99, 102, 241, 0.15)' : 'rgba(255, 255, 255, 0.05)',
+                border: soundActive ? '1px solid rgba(99, 102, 241, 0.4)' : '1px solid var(--border-subtle)',
+                color: soundActive ? '#818cf8' : 'var(--text-muted)',
+                width: '34px',
+                height: '34px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+            >
+              {soundActive ? <Volume2 size={15} /> : <VolumeX size={15} />}
+            </button>
+
+            <button
+              onClick={() => {
+                sfx.playClick();
+                onOpenCv();
+              }}
+              className="btn-primary"
+              style={{
+                padding: '0.45rem 1rem',
+                fontSize: '0.8rem',
+              }}
+            >
+              <FileText size={14} />
+              <span>CV Resume</span>
+            </button>
+          </div>
+
+          {/* Mobile Hamburger Button (On the RIGHT side as requested) */}
           <button
-            onClick={toggleSound}
-            title={soundActive ? 'Sound FX Enabled (Click to Mute)' : 'Sound FX Muted (Click to Unmute)'}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="mobile-only-btn"
+            aria-label="Toggle navigation menu"
             style={{
-              background: soundActive ? 'rgba(99, 102, 241, 0.15)' : 'rgba(255, 255, 255, 0.05)',
-              border: soundActive ? '1px solid rgba(99, 102, 241, 0.4)' : '1px solid var(--border-subtle)',
-              color: soundActive ? '#818cf8' : 'var(--text-muted)',
-              width: '34px',
-              height: '34px',
-              borderRadius: '50%',
+              background: 'rgba(255, 255, 255, 0.06)',
+              border: '1px solid var(--border-subtle)',
+              color: 'var(--text-primary)',
+              width: '38px',
+              height: '38px',
+              borderRadius: '10px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              transition: 'all 0.2s',
+              flexShrink: 0,
             }}
           >
-            {soundActive ? <Volume2 size={15} /> : <VolumeX size={15} />}
-          </button>
-
-          {/* CV Button */}
-          <button
-            onClick={() => {
-              sfx.playClick();
-              onOpenCv();
-            }}
-            className="btn-primary"
-            style={{
-              padding: '0.45rem 1rem',
-              fontSize: '0.8rem',
-            }}
-          >
-            <FileText size={14} />
-            <span>CV Resume</span>
+            {mobileMenuOpen ? <X size={19} /> : <Menu size={19} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer (Contains navigation links, CV button, and sound toggle) */}
+      {/* Mobile Drawer (Links + CV Button + Sound) */}
       {mobileMenuOpen && (
         <div
           style={{
