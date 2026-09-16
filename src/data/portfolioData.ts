@@ -36,9 +36,8 @@ export const PORTFOLIO_DATA = {
     linkedin: "https://linkedin.com/in/ibnuzakial",
     stats: [
       { label: "Completed Projects", value: "12+" },
-      { label: "Core Stacks Mastered", value: "8+" },
-      { label: "Android Apps Shipped", value: "4+" },
-      { label: "Code Quality", value: "Clean & Tested" },
+      { label: "Core Technologies", value: "8+" },
+      { label: "Android & Web Apps", value: "4+" },
     ]
   },
 
