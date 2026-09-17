@@ -2,13 +2,14 @@ export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  category: 'all' | 'web' | 'mobile' | 'ai-integration';
+  category: 'all' | 'web' | 'mobile';
   categoryLabel: string;
   description: string;
   longDescription: string;
   tags: string[];
   metrics: { label: string; value: string }[];
   image: string;
+  images?: string[];
   githubUrl: string;
   liveUrl?: string;
   featured: boolean;
@@ -25,9 +26,9 @@ export interface TechItem {
 export const PORTFOLIO_DATA = {
   profile: {
     name: "Ibnu Zaki Al",
-    title: "Fullstack Web & Android Developer",
+    title: "Fullstack Web & Mobile Developer",
     subtitle: "Fresh Graduate • Software Engineering",
-    shortBio: "Passionate Fresh Graduate Developer specializing in modern Fullstack Web (React / TypeScript / Node.js) and Native Android (Kotlin / Jetpack Compose). Experienced in integrating open-source Hugging Face AI models into practical web & mobile applications.",
+    shortBio: "Passionate Fresh Graduate Developer specializing in modern Fullstack Web (React / TypeScript / Next.js / Node.js) and Native & Cross-Platform Mobile Application Development (Kotlin / Flutter / Jetpack Compose). Dedicated to engineering high-performance software with clean architectures and intuitive user experiences.",
     location: "Indonesia (Open to On-site, Hybrid & Remote)",
     status: "Available for Hire",
     email: "zakiibnu723@gmail.com",
@@ -38,87 +39,100 @@ export const PORTFOLIO_DATA = {
     stats: [
       { label: "Completed Projects", value: "12+" },
       { label: "Core Technologies", value: "8+" },
-      { label: "Android & Web Apps", value: "4+" },
+      { label: "Web & Mobile Apps", value: "6+" },
     ]
   },
 
   projects: [
     {
-      id: "xray-chest-ai",
-      title: "ChestPulse AI",
-      subtitle: "Chest X-Ray Disease Classifier & Medical Viewer",
-      category: "ai-integration",
-      categoryLabel: "AI Integration & Fullstack",
-      description: "Web application that allows doctors and students to upload chest X-ray scans and receive instant abnormality classification powered by an open-source Hugging Face vision model.",
-      longDescription: "Built an end-to-end fullstack diagnostic assistance tool. Deployed an open-source PyTorch/Torchvision model from Hugging Face behind a fast Python FastAPI backend. The React web client provides DICOM/PNG image dropzone, bounding box abnormality markers, confidence scores, and PDF summary export.",
-      tags: ["Python", "FastAPI", "Hugging Face", "PyTorch", "React", "TypeScript", "Tailwind CSS"],
+      id: "lively-weather",
+      title: "Lively Weather ⛅",
+      subtitle: "Next.js 14 Fullstack Atmospheric Forecast App",
+      category: "web",
+      categoryLabel: "Fullstack Web & Data Viz",
+      description: "Atmospheric weather forecast application featuring dynamic reactive video/image background themes, interactive 7-day weather predictions, and a synchronized 24-hour hourly forecast chart.",
+      longDescription: "Upgraded from a vanilla JS project into a modern, production-grade Fullstack Next.js (App Router + TypeScript + Prisma ORM) platform. Preserves 100% pixel-perfect glassmorphism layout while introducing server-side API proxy protection, smart 30-minute in-memory caching, rate-limit resilience, and SQLite search history persistence.",
+      tags: ["Next.js 14", "React 18", "TypeScript", "Prisma ORM", "Chart.js", "SQLite", "Glassmorphism", "Visual Crossing API"],
       metrics: [
-        { label: "Inference Time", value: "< 450ms" },
-        { label: "Classes Detected", value: "14 Conditions" },
-        { label: "API Protocol", value: "RESTful JSON" }
+        { label: "Framework", value: "Next.js 14" },
+        { label: "API Caching", value: "30-min TTL" },
+        { label: "Database", value: "Prisma SQLite" }
       ],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
-      githubUrl: "https://github.com/ibnuzakial/chest-xray-detection",
-      liveUrl: "https://chestpulse-demo.web.app",
+      image: "/lively-weather-1.png",
+      images: [
+        "/lively-weather-1.png",
+        "/lively-weather-2.png",
+        "/lively-weather-3.png"
+      ],
+      githubUrl: "https://github.com/zakiibnu723/Lively-Weather",
+      liveUrl: "https://lively-weather.vercel.app/",
       featured: true,
       highlights: [
-        "Packaged Hugging Face vision model with PyTorch & Torchvision",
-        "FastAPI asynchronous REST endpoint with image preprocessing & resizing",
-        "Interactive React canvas preview with probability heatmap overlay",
-        "Exportable patient diagnostic report generator (PDF)"
+        "100% Pixel-Perfect Glassmorphism Layout with dynamic video background atmospheric engine",
+        "Backend API Proxy protecting Visual Crossing API key securely on the server-side",
+        "Smart In-Memory & Server Caching with automatic fallback offline dataset on rate-limits",
+        "Prisma ORM with SQLite database storing location search history and favorites",
+        "Interactive Chart.js 24-hour hourly temperature and weather curve visualizer"
       ]
     },
     {
-      id: "voice-clone-app",
-      title: "VoxMorph Studio",
-      subtitle: "AI Voice Transformation & Cloning Platform",
-      category: "ai-integration",
-      categoryLabel: "AI Integration & Fullstack",
-      description: "Audio processing web application wrapping open-source Hugging Face TTS and voice conversion models with interactive waveform visualization.",
-      longDescription: "Developed a creative audio workbench enabling users to record voice clips and convert them into customized vocal profiles. Uses an open-source Hugging Face voice conversion model served via FastAPI, with real-time waveform scrubbing on the React frontend using Web Audio API.",
-      tags: ["Python", "FastAPI", "Hugging Face Models", "React", "Web Audio API", "Node.js"],
+      id: "solar-energy-map",
+      title: "Indonesia Solar Energy Map 🗺️",
+      subtitle: "Interactive Geospatial Solar Irradiance Analytics Platform",
+      category: "web",
+      categoryLabel: "Geospatial & Fullstack Web",
+      description: "Interactive full-stack geospatial platform that visualizes renewable solar irradiance potential data (GHI, DHI, DNI) across 37 provinces and 514 districts/cities throughout Indonesia.",
+      longDescription: "Engineered an end-to-end geospatial platform powered by Next.js 16+, Prisma ORM, and dynamic Leaflet choropleth maps with CartoDB Dark basemaps and custom neon GHI gradient scales. Eliminates client request waterfalls with server-side aggregation and on-demand GeoJSON boundaries.",
+      tags: ["Next.js 16+", "Leaflet", "React-Leaflet", "Prisma ORM", "TypeScript", "Chart.js", "GeoJSON", "Open-Meteo API"],
       metrics: [
-        { label: "Audio Processing", value: "~1.2s Latency" },
-        { label: "Voice Presets", value: "8+ Profiles" },
-        { label: "Audio Format", value: "WAV / MP3" }
+        { label: "Provinces & Districts", value: "37 & 514" },
+        { label: "Irradiance Metrics", value: "GHI, DHI, DNI" },
+        { label: "Mapping Engine", value: "Leaflet Choropleth" }
       ],
-      image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop",
-      githubUrl: "https://github.com/ibnuzakial/voxmorph-voice-changer",
-      liveUrl: "https://voxmorph.web.app",
+      image: "/solarmap-1.png",
+      images: [
+        "/solarmap-1.png",
+        "/solarmap-2.png",
+        "/solarmap-3.png"
+      ],
+      githubUrl: "https://github.com/zakiibnu723/solar-energy-map/",
+      liveUrl: "https://solar-energy-map.vercel.app/",
       featured: true,
       highlights: [
-        "Inference server utilizing open-source audio models from Hugging Face",
-        "Client-side mic audio recorder with real-time spectrum visualizer",
-        "FastAPI streaming endpoint returning converted audio buffer",
-        "User library to save and export generated audio clips"
+        "High-Performance Geospatial Choropleth Map with CartoDB Dark basemap and GHI neon gradients",
+        "Zero Request Waterfalls: Server-side summary endpoints replacing 38+ client waterfalls",
+        "On-Demand GeoJSON Delivery filtering 8.7MB boundary payloads dynamically",
+        "Dynamic Time-Series Visualizer with GHI, DHI, and DNI irradiance metrics via Chart.js",
+        "Interactive Temporal Filters with Daily, Monthly, and Yearly frequency views",
+        "Adaptive Responsive Design: Desktop HUD side-drawer converting into mobile bottom-sheet"
       ]
     },
     {
-      id: "taskflow-android",
+      id: "taskflow-mobile",
       title: "TaskFlow Mobile",
-      subtitle: "Modern Offline-First Native Android Task & Habit Tracker",
+      subtitle: "Modern Offline-First Native Android & Mobile Task Suite",
       category: "mobile",
-      categoryLabel: "Android Kotlin",
-      description: "Native Android application built with 100% Kotlin & Jetpack Compose, featuring offline-first Room SQLite caching and smooth Material 3 animations.",
-      longDescription: "A polished native mobile application designed with modern Android best practices. Uses unidirectional data flow (MVVM/MVI), Kotlin Coroutines and StateFlow for reactive UI, Room database for instant offline access, and WorkManager for scheduled reminders.",
-      tags: ["Kotlin", "Jetpack Compose", "Coroutines & Flow", "Room DB", "Material 3", "Retrofit"],
+      categoryLabel: "Mobile Engineering",
+      description: "Native mobile application built with 100% Kotlin & Jetpack Compose, featuring offline-first Room SQLite caching, smooth Material 3 animations, and companion Flutter architecture.",
+      longDescription: "A polished native mobile application designed with modern mobile best practices. Uses unidirectional data flow (MVVM/MVI), Kotlin Coroutines and StateFlow for reactive UI, Room database for instant offline access, and WorkManager for scheduled reminders.",
+      tags: ["Kotlin", "Jetpack Compose", "Flutter", "Coroutines & Flow", "Room DB", "Material 3", "Retrofit"],
       metrics: [
         { label: "Architecture", value: "Clean MVVM" },
         { label: "Offline Mode", value: "100% Functional" },
         { label: "UI Framework", value: "Jetpack Compose" }
       ],
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop",
-      githubUrl: "https://github.com/ibnuzakial/taskflow-android",
-      featured: true,
+      githubUrl: "https://github.com/zakiibnu723/taskflow-android",
+      featured: false,
       highlights: [
         "Built purely with Jetpack Compose & Material 3 dynamic color theming",
         "Offline-first architecture with Room SQLite database & DAO pattern",
         "Coroutines & StateFlow for non-blocking asynchronous operations",
-        "Retrofit REST client with OkHttp interceptors and error handling"
+        "Cross-platform architecture exploration using Flutter for shared business logic"
       ]
     },
     {
-      id: "dev-hub-platform",
+      id: "omnicart-commerce",
       title: "OmniCart Commerce",
       subtitle: "Fullstack E-Commerce & Inventory Management Portal",
       category: "web",
@@ -132,7 +146,7 @@ export const PORTFOLIO_DATA = {
         { label: "Page Speed", value: "Sub-second" }
       ],
       image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1200&auto=format&fit=crop",
-      githubUrl: "https://github.com/ibnuzakial/omnicart-fullstack",
+      githubUrl: "https://github.com/zakiibnu723/omnicart-fullstack",
       liveUrl: "https://omnicart-demo.web.app",
       featured: false,
       highlights: [
@@ -147,37 +161,40 @@ export const PORTFOLIO_DATA = {
   techStack: [
     // Frontend
     { name: "React", category: "frontend", icon: "Code2", badge: "Core" },
+    { name: "Next.js", category: "frontend", icon: "Globe", badge: "Framework" },
     { name: "TypeScript", category: "frontend", icon: "FileCode2", badge: "Primary" },
     { name: "JavaScript (ES6+)", category: "frontend", icon: "Code", badge: "Core" },
-    { name: "Next.js", category: "frontend", icon: "Globe", badge: "Framework" },
     { name: "Tailwind CSS", category: "frontend", icon: "Palette", badge: "Styling" },
     { name: "HTML5 & CSS3", category: "frontend", icon: "Layout", badge: "Fundamental" },
 
     // Backend & DB
     { name: "Node.js", category: "backend", icon: "Server", badge: "Runtime" },
     { name: "Express.js", category: "backend", icon: "Cpu", badge: "Backend" },
-    { name: "Python", category: "backend", icon: "Terminal", badge: "Backend & AI" },
+    { name: "Python", category: "backend", icon: "Terminal", badge: "Backend" },
     { name: "FastAPI", category: "backend", icon: "Zap", badge: "API Server" },
     { name: "PostgreSQL", category: "backend", icon: "Database", badge: "Database" },
-    { name: "MySQL", category: "backend", icon: "Database", badge: "Database" },
+    { name: "SQLite", category: "backend", icon: "Database", badge: "Local DB" },
     { name: "Prisma ORM", category: "backend", icon: "Layers", badge: "ORM" },
     { name: "RESTful APIs", category: "backend", icon: "Network", badge: "Architecture" },
 
     // Mobile
     { name: "Kotlin", category: "mobile", icon: "Smartphone", badge: "Android Core" },
+    { name: "Flutter", category: "mobile", icon: "Layers", badge: "Cross-Platform" },
+    { name: "Dart", category: "mobile", icon: "Code", badge: "Language" },
     { name: "Jetpack Compose", category: "mobile", icon: "Layers", badge: "Modern UI" },
     { name: "Android Studio", category: "mobile", icon: "Cpu", badge: "IDE" },
     { name: "Room SQLite", category: "mobile", icon: "Database", badge: "Local DB" },
     { name: "Coroutines & Flow", category: "mobile", icon: "Activity", badge: "Async" },
     { name: "Retrofit / OkHttp", category: "mobile", icon: "Network", badge: "Networking" },
 
-    // Tools & AI Integration
-    { name: "Hugging Face Models", category: "tools", icon: "Sparkles", badge: "AI Integration" },
+    // Tools & Engineering
     { name: "Git & GitHub", category: "tools", icon: "GitBranch", badge: "VCS" },
     { name: "Postman", category: "tools", icon: "Send", badge: "API Testing" },
+    { name: "Leaflet / Geospatial", category: "tools", icon: "Globe", badge: "Mapping" },
+    { name: "Chart.js", category: "tools", icon: "Activity", badge: "Analytics" },
     { name: "Docker (Basic)", category: "tools", icon: "Box", badge: "DevOps" },
     { name: "VS Code", category: "tools", icon: "Terminal", badge: "Editor" },
-    { name: "Figma (UI Slice)", category: "tools", icon: "Figma", badge: "Design" },
+    { name: "Figma (UI Slice)", category: "tools", icon: "PenTool", badge: "Design" },
   ] as TechItem[],
 
   experiences: [
@@ -186,22 +203,22 @@ export const PORTFOLIO_DATA = {
       role: "Junior Fullstack & Mobile Developer (Freelance / Projects)",
       company: "Independent Developer",
       location: "Indonesia",
-      description: "Developing custom web applications and native Android apps for clients and independent portfolio showcase. Integrating open-source Hugging Face models into practical client workflows.",
+      description: "Developing fullstack web applications and native & cross-platform mobile apps (Kotlin & Flutter). Architecting clean RESTful backends with Next.js, Express, and FastAPI connected to SQLite and PostgreSQL.",
       achievements: [
-        "Shipped 4+ complete web and mobile projects with clean architectures and zero critical bugs.",
-        "Engineered RESTful API backends with FastAPI and Express connected to relational databases.",
-        "Built responsive user interfaces with React, Tailwind CSS, and Jetpack Compose."
+        "Architected and deployed fullstack geospatial platform 'Indonesia Solar Energy Map' using Next.js, Leaflet, and Prisma.",
+        "Built and scaled 'Lively Weather' with server-side Visual Crossing API proxy and Chart.js forecast analytics.",
+        "Shipped native Android applications with Jetpack Compose, Room SQLite offline-first sync, and clean MVVM architecture."
       ],
-      skills: ["React", "TypeScript", "Kotlin", "Compose", "FastAPI", "PostgreSQL", "Tailwind"]
+      skills: ["Next.js", "React", "TypeScript", "Kotlin", "Flutter", "Prisma", "Leaflet", "Chart.js", "Tailwind"]
     },
     {
       period: "2023 — 2024",
-      role: "Software Engineering Intern / Capstone Lead",
+      role: "Software Engineering Intern / Academic Capstone Lead",
       company: "Tech Project Lab / Academic Capstone",
       location: "Indonesia",
       description: "Led a team of students in developing fullstack applications and native mobile prototypes. Implemented state management, database schema design, and API integrations.",
       achievements: [
-        "Spearheaded database modeling and endpoint architecture for student management and medical vision capstone.",
+        "Spearheaded database modeling and endpoint architecture for student management and geospatial data visualization capstone.",
         "Implemented clean Git branching workflows, code reviews, and API documentation with Swagger/Postman.",
         "Awarded Outstanding Capstone Project distinction for clean execution."
       ],
@@ -210,7 +227,7 @@ export const PORTFOLIO_DATA = {
   ],
 
   cvDetails: {
-    summary: "Motivated Fresh Graduate in Computer Science / Software Engineering with a strong focus on modern Fullstack Web Development (React, TypeScript, Node.js) and Native Android Development (Kotlin, Jetpack Compose). Practical experience in integrating open-source Hugging Face AI models into production-ready web and mobile backends. Fast learner, detail-oriented, and ready to contribute directly to team engineering goals.",
+    summary: "Motivated Fresh Graduate in Computer Science / Software Engineering with a strong focus on modern Fullstack Web Development (Next.js, React, TypeScript, Node.js) and Native & Cross-Platform Mobile Development (Kotlin, Flutter, Jetpack Compose). Proven capability building production-grade web systems like interactive geospatial mapping and dynamic fullstack weather engines. Fast learner, detail-oriented, and ready to contribute directly to team engineering goals.",
     education: [
       {
         degree: "Bachelor of Science in Computer Science / Informatics",
@@ -220,10 +237,10 @@ export const PORTFOLIO_DATA = {
       }
     ],
     certifications: [
-      "Android Development with Kotlin & Jetpack Compose",
-      "Fullstack Web Development (React & Node.js)",
-      "RESTful API Development with Python FastAPI",
-      "Database Design with PostgreSQL & MySQL"
+      "Modern Android Development with Kotlin & Jetpack Compose",
+      "Cross-Platform Mobile Application Development with Flutter",
+      "Fullstack Web Development with Next.js, React & Node.js",
+      "Database Design & ORM Integration with Prisma & PostgreSQL"
     ]
   }
 };

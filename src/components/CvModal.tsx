@@ -182,12 +182,12 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Node.js, Express, Python, FastAPI, PostgreSQL, MySQL, Prisma</div>
               </div>
               <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '0.85rem', borderRadius: '10px' }}>
-                <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#ffffff', marginBottom: '0.25rem' }}>Mobile Android:</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Kotlin, Jetpack Compose, Room SQLite, Coroutines, Flow</div>
+                <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#ffffff', marginBottom: '0.25rem' }}>Mobile Engineering:</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Flutter, Dart, Kotlin, Jetpack Compose, Room SQLite, Coroutines</div>
               </div>
               <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '0.85rem', borderRadius: '10px' }}>
-                <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#ffffff', marginBottom: '0.25rem' }}>Tools & AI:</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Hugging Face Models, Git, Postman, Docker, REST APIs</div>
+                <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#ffffff', marginBottom: '0.25rem' }}>Tools & Architecture:</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Git, GitHub, Postman, Leaflet, Chart.js, Docker, REST APIs</div>
               </div>
             </div>
           </div>

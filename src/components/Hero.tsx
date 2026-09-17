@@ -98,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
             }}
           >
             <Sparkles size={13} />
-            <span>SOFTWARE ENGINEER</span>
+            <span>WEB & MOBILE DEVELOPER</span>
           </div>
         </div>
 
@@ -136,7 +136,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
                 marginBottom: '1.35rem',
               }}
             >
-              Hi, I'm <strong style={{ color: '#fff' }}>{PORTFOLIO_DATA.profile.name}</strong>. Fresh graduate developer focused on building reliable web interfaces, native Android Kotlin applications, and integrating open-source Hugging Face models into production backends.
+              Hi, I'm <strong style={{ color: '#fff' }}>{PORTFOLIO_DATA.profile.name}</strong>. Fresh graduate developer focused on building reliable web applications (Next.js, React, TypeScript, Node.js) and native & cross-platform mobile software (Kotlin, Flutter). Dedicated to clean code, type safety, and seamless user experiences.
             </p>
 
             {/* Quick Action CTAs */}
@@ -187,7 +187,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
               <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', marginRight: '0.3rem' }}>
                 STACK:
               </span>
-              {['React', 'TypeScript', 'Node.js', 'Kotlin', 'Jetpack Compose', 'FastAPI', 'PostgreSQL', 'Hugging Face'].map((tech) => (
+              {['Next.js', 'React', 'TypeScript', 'Node.js', 'Flutter', 'Kotlin', 'Prisma', 'PostgreSQL'].map((tech) => (
                 <span key={tech} className="tech-pill" style={{ padding: '0.25rem 0.65rem', fontSize: '0.72rem' }}>
                   {tech}
                 </span>
@@ -209,12 +209,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
                 margin: '0 auto',
               }}
             >
-              {/* Profile Image (Tighter height for single-viewport fit) */}
+              {/* Profile Image (Using Pa_20260917_094505_0000.png) */}
               <div
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '220px',
+                  height: '240px',
                   borderRadius: '14px',
                   overflow: 'hidden',
                   background: '#090b10',
@@ -223,13 +223,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
                 className="hero-image-box"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"
+                  src="/profile.png"
                   alt="Ibnu Zaki Al Profile"
                   style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    filter: 'brightness(0.85) contrast(1.1)',
+                    objectPosition: 'center top',
+                    filter: 'contrast(1.05)',
                   }}
                 />
 
@@ -237,7 +238,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(to top, rgba(6, 7, 10, 0.9) 0%, rgba(6, 7, 10, 0.15) 60%, transparent 100%)',
+                    background: 'linear-gradient(to top, rgba(6, 7, 10, 0.9) 0%, rgba(6, 7, 10, 0.1) 50%, transparent 100%)',
                   }}
                 />
 
@@ -279,7 +280,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
 
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <span style={{ color: 'var(--text-muted)' }}>Focus:</span>
-                  <span style={{ color: '#c7d2fe', fontWeight: 500 }}>Web, Android & AI API</span>
+                  <span style={{ color: '#c7d2fe', fontWeight: 500 }}>Web & Mobile Engineering</span>
                 </div>
               </div>
 
