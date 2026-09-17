@@ -177,20 +177,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv }) => {
               {soundActive ? <Volume2 size={15} /> : <VolumeX size={15} />}
             </button>
 
-            <button
-              onClick={() => {
-                sfx.playClick();
-                onOpenCv();
-              }}
+            <a
+              href="/CV-Ibnu-Zaki-Alhawari.pdf"
+              download="CV - Ibnu Zaki Alhawari.pdf"
               className="btn-primary"
               style={{
                 padding: '0.45rem 1rem',
                 fontSize: '0.8rem',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.45rem',
               }}
+              onClick={() => sfx.playClick()}
+              title="Download Official CV PDF"
             >
               <FileText size={14} />
               <span>CV Resume</span>
-            </button>
+            </a>
           </div>
 
           {/* Mobile Hamburger Button (On the RIGHT side as requested) */}
@@ -257,18 +261,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv }) => {
 
           {/* Action Row inside Mobile Drawer */}
           <div style={{ paddingTop: '0.75rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-            <button
+            <a
+              href="/CV-Ibnu-Zaki-Alhawari.pdf"
+              download="CV - Ibnu Zaki Alhawari.pdf"
+              className="btn-primary"
+              style={{ flex: 1, padding: '0.65rem 1rem', fontSize: '0.85rem', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.45rem' }}
               onClick={() => {
                 sfx.playClick();
                 setMobileMenuOpen(false);
-                onOpenCv();
               }}
-              className="btn-primary"
-              style={{ flex: 1, padding: '0.65rem 1rem', fontSize: '0.85rem' }}
+              title="Download Official CV PDF"
             >
               <FileText size={15} />
-              <span>View CV Resume</span>
-            </button>
+              <span>Download CV</span>
+            </a>
 
             <button
               onClick={toggleSound}

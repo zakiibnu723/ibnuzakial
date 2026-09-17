@@ -163,17 +163,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
                 <ArrowUpRight size={16} />
               </a>
 
-              <button
-                onClick={() => {
-                  sfx.playClick();
-                  onOpenCv();
-                }}
+              <a
+                href="/CV-Ibnu-Zaki-Alhawari.pdf"
+                download="CV - Ibnu Zaki Alhawari.pdf"
                 className="btn-secondary"
-                style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
+                style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem', textDecoration: 'none' }}
+                onClick={() => sfx.playClick()}
+                title="Download Official CV PDF"
               >
                 <FileText size={15} />
                 <span>Resume / CV</span>
-              </button>
+              </a>
 
               <a
                 href="#contact"

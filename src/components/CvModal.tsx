@@ -80,13 +80,24 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <a
+              href="/CV-Ibnu-Zaki-Alhawari.pdf"
+              download="CV - Ibnu Zaki Alhawari.pdf"
+              className="btn-primary"
+              style={{ padding: '0.5rem 1.15rem', fontSize: '0.825rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+              onClick={() => sfx.playClick()}
+            >
+              <FileText size={15} />
+              <span>Download PDF</span>
+            </a>
+
             <button
               onClick={handlePrint}
-              className="btn-primary"
+              className="btn-secondary"
               style={{ padding: '0.5rem 1.15rem', fontSize: '0.825rem' }}
             >
               <Printer size={15} />
-              <span>Print / Save as PDF</span>
+              <span>Print</span>
             </button>
 
             <button
