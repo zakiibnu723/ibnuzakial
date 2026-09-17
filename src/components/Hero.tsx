@@ -136,7 +136,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
                 marginBottom: '1.35rem',
               }}
             >
-              Hi, I'm <strong style={{ color: '#fff' }}>{PORTFOLIO_DATA.profile.name}</strong>. Fresh graduate developer focused on building reliable web applications (Next.js, React, TypeScript, Node.js) and native & cross-platform mobile software (Kotlin, Flutter). Dedicated to clean code, type safety, and seamless user experiences.
+              Hi, I'm <strong style={{ color: '#fff' }}>{PORTFOLIO_DATA.profile.name}</strong>. Informatics student at UIN Sunan Kalijaga Yogyakarta focused on engineering reliable web systems (Next.js, React, TypeScript, Node.js) and high-performance mobile applications (Flutter, Kotlin). Winner of multiple national software competitions.
             </p>
 
             {/* Quick Action CTAs */}

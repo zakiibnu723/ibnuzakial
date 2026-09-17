@@ -75,7 +75,7 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
               CURRICULUM VITAE
             </span>
             <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-              (Fresh Graduate • Software Engineering)
+              (Informatics • UIN Sunan Kalijaga Yogyakarta)
             </span>
           </div>
 
@@ -183,11 +183,11 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
               </div>
               <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '0.85rem', borderRadius: '10px' }}>
                 <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#ffffff', marginBottom: '0.25rem' }}>Mobile Engineering:</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Flutter, Dart, Kotlin, Jetpack Compose, Room SQLite, Coroutines</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Flutter, Dart, Kotlin, Jetpack Compose</div>
               </div>
               <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '0.85rem', borderRadius: '10px' }}>
-                <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#ffffff', marginBottom: '0.25rem' }}>Tools & Architecture:</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Git, GitHub, Postman, Leaflet, Chart.js, Docker, REST APIs</div>
+                <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#ffffff', marginBottom: '0.25rem' }}>Tools & Engineering:</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Git, GitHub, Leaflet, Chart.js, VS Code, REST APIs</div>
               </div>
             </div>
           </div>

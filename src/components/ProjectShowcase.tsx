@@ -345,26 +345,43 @@ export const ProjectShowcase: React.FC = () => {
                     </button>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="GitHub Repository"
-                        onClick={() => sfx.playClick()}
-                        style={{
-                          width: '34px',
-                          height: '34px',
-                          borderRadius: '50%',
-                          background: 'rgba(255, 255, 255, 0.05)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: 'var(--text-secondary)',
-                          textDecoration: 'none',
-                        }}
-                      >
-                        <GithubIcon size={16} />
-                      </a>
+                      {project.githubUrl ? (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="GitHub Repository"
+                          onClick={() => sfx.playClick()}
+                          style={{
+                            width: '34px',
+                            height: '34px',
+                            borderRadius: '50%',
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: 'var(--text-secondary)',
+                            textDecoration: 'none',
+                          }}
+                        >
+                          <GithubIcon size={16} />
+                        </a>
+                      ) : (
+                        <span
+                          title="Source Code: In Active Development"
+                          style={{
+                            padding: '0.2rem 0.55rem',
+                            borderRadius: 'var(--radius-full)',
+                            background: 'rgba(255, 255, 255, 0.04)',
+                            border: '1px solid rgba(255, 255, 255, 0.08)',
+                            fontSize: '0.7rem',
+                            color: 'var(--text-muted)',
+                            fontFamily: 'var(--font-mono)',
+                          }}
+                        >
+                          In Progress
+                        </span>
+                      )}
 
                       {project.liveUrl && (
                         <a
@@ -523,8 +540,8 @@ export const ProjectShowcase: React.FC = () => {
             </div>
 
             {/* Bottom Actions */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
-              {selectedProject.liveUrl && (
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+              {selectedProject.liveUrl ? (
                 <a
                   href={selectedProject.liveUrl}
                   target="_blank"
@@ -536,19 +553,56 @@ export const ProjectShowcase: React.FC = () => {
                   <ExternalLink size={15} />
                   <span>Launch Live Platform</span>
                 </a>
+              ) : (
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    padding: '0.55rem 1rem',
+                    borderRadius: 'var(--radius-full)',
+                    background: 'rgba(6, 182, 212, 0.08)',
+                    border: '1px solid rgba(6, 182, 212, 0.25)',
+                    color: 'var(--accent-cyan)',
+                    fontSize: '0.8rem',
+                    fontFamily: 'var(--font-mono)',
+                  }}
+                >
+                  <span>Play Store / Web: Coming Soon</span>
+                </div>
               )}
 
-              <a
-                href={selectedProject.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-                onClick={() => sfx.playClick()}
-                style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
-              >
-                <GithubIcon size={16} />
-                <span>View Source Code</span>
-              </a>
+              {selectedProject.githubUrl ? (
+                <a
+                  href={selectedProject.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                  onClick={() => sfx.playClick()}
+                  style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
+                >
+                  <GithubIcon size={16} />
+                  <span>View Source Code</span>
+                </a>
+              ) : (
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    padding: '0.55rem 1rem',
+                    borderRadius: 'var(--radius-full)',
+                    background: 'rgba(255, 255, 255, 0.04)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    color: 'var(--text-muted)',
+                    fontSize: '0.8rem',
+                    fontFamily: 'var(--font-mono)',
+                  }}
+                >
+                  <GithubIcon size={14} />
+                  <span>Repository: Coming Soon</span>
+                </div>
+              )}
             </div>
           </div>
         </div>

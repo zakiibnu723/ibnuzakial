@@ -1,6 +1,6 @@
 import React from 'react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
-import { Briefcase, GraduationCap, CheckCircle2 } from 'lucide-react';
+import { Trophy, GraduationCap, Award, Calendar, MapPin } from 'lucide-react';
 
 export const ExperienceTimeline: React.FC = () => {
   return (
@@ -23,84 +23,87 @@ export const ExperienceTimeline: React.FC = () => {
               marginBottom: '1rem',
             }}
           >
-            <Briefcase size={14} />
-            <span>BACKGROUND & EDUCATION</span>
+            <Trophy size={14} />
+            <span>HONORS & JOURNEY</span>
           </div>
 
           <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.25rem)', fontWeight: 800, marginBottom: '0.75rem' }}>
-            Experience & <span className="text-gradient-emerald">Journey</span>.
+            Competitions & <span className="text-gradient-emerald">Journey</span>.
           </h2>
 
-          <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', fontSize: '1.05rem', lineHeight: 1.6 }}>
-            Educational background and hands-on experience building software, shipping academic capstones, and tackling real-world problems.
+          <p style={{ color: 'var(--text-secondary)', maxWidth: '640px', margin: '0 auto', fontSize: '1.02rem', lineHeight: 1.6 }}>
+            Track record of participating and winning national-level software engineering, web design, and technological innovation competitions.
           </p>
         </div>
 
-        {/* 2-Column or Stacked Clean Cards */}
+        {/* Minimal Stacked Cards */}
         <div
           style={{
             maxWidth: '820px',
             margin: '0 auto',
             display: 'flex',
             flexDirection: 'column',
-            gap: '1.75rem',
+            gap: '1.5rem',
           }}
         >
-          {/* Work / Project Experience */}
-          {PORTFOLIO_DATA.experiences.map((exp) => (
+          {/* Competition Experience Cards */}
+          {PORTFOLIO_DATA.experiences.map((exp, idx) => (
             <div
-              key={exp.period}
+              key={idx}
               className="glass-panel"
               style={{
                 padding: '1.75rem 2rem',
                 borderRadius: '20px',
                 border: '1px solid var(--border-subtle)',
+                transition: 'border-color 0.2s ease',
               }}
             >
-              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                <div>
-                  <div style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)', color: 'var(--accent-cyan)', marginBottom: '0.2rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem', marginBottom: '0.85rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span
+                    style={{
+                      padding: '0.28rem 0.75rem',
+                      borderRadius: 'var(--radius-full)',
+                      background: 'rgba(234, 179, 8, 0.12)',
+                      border: '1px solid rgba(234, 179, 8, 0.35)',
+                      color: '#facc15',
+                      fontSize: '0.75rem',
+                      fontFamily: 'var(--font-mono)',
+                      fontWeight: 700,
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.35rem',
+                    }}
+                  >
+                    <Award size={13} />
+                    {exp.awardBadge}
+                  </span>
+                  <span style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                    <Calendar size={13} />
                     {exp.period}
-                  </div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff' }}>
-                    {exp.role}
-                  </h3>
-                  <div style={{ fontSize: '0.925rem', color: '#c7d2fe', fontWeight: 500 }}>
-                    {exp.company} • <span style={{ color: 'var(--text-muted)' }}>{exp.location}</span>
-                  </div>
+                  </span>
                 </div>
 
-                <div
-                  style={{
-                    padding: '0.3rem 0.75rem',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'rgba(255, 255, 255, 0.04)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    fontSize: '0.75rem',
-                    fontFamily: 'var(--font-mono)',
-                    color: 'var(--text-muted)',
-                  }}
-                >
-                  ENGINEERING
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                  <MapPin size={13} />
+                  {exp.location}
                 </div>
               </div>
 
-              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '1.25rem', fontSize: '0.925rem' }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#ffffff', marginBottom: '0.35rem' }}>
+                {exp.role}
+              </h3>
+
+              <div style={{ fontSize: '0.9rem', color: 'var(--accent-cyan)', fontWeight: 600, marginBottom: '0.85rem' }}>
+                {exp.institution}
+              </div>
+
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '1.15rem', fontSize: '0.92rem' }}>
                 {exp.description}
               </p>
 
-              {/* Bullet Achievements */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.25rem' }}>
-                {exp.achievements.map((ach, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
-                    <CheckCircle2 size={16} style={{ color: 'var(--accent-emerald)', marginTop: '0.2rem', flexShrink: 0 }} />
-                    <span style={{ fontSize: '0.875rem', color: '#e2e8f0' }}>{ach}</span>
-                  </div>
-                ))}
-              </div>
-
               {/* Skills Tags */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                 {exp.skills.map((s) => (
                   <span key={s} className="tech-pill">
                     {s}
@@ -120,7 +123,7 @@ export const ExperienceTimeline: React.FC = () => {
               background: 'rgba(18, 22, 34, 0.7)',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem' }}>
               <div
                 style={{
                   width: '42px',
@@ -136,25 +139,25 @@ export const ExperienceTimeline: React.FC = () => {
                 <GraduationCap size={22} />
               </div>
               <div>
-                <div style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)', color: 'var(--accent-cyan)' }}>
-                  FORMAL DEGREE
+                <div style={{ fontSize: '0.78rem', fontFamily: 'var(--font-mono)', color: 'var(--accent-cyan)' }}>
+                  FORMAL EDUCATION
                 </div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff' }}>
-                  Bachelor of Computer Science / Informatics
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#ffffff' }}>
+                  Bachelor of Informatics / Computer Science (S1)
                 </h3>
               </div>
             </div>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.75rem' }}>
-              <span>Universitas / Institute of Technology</span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '0.75rem' }}>
+              <span style={{ color: '#ffffff', fontWeight: 600 }}>UIN Sunan Kalijaga Yogyakarta</span>
               <span>•</span>
-              <span>Graduated 2024</span>
+              <span style={{ color: 'var(--accent-cyan)' }}>2022 — 2026 (Expected Graduation)</span>
               <span>•</span>
-              <span style={{ color: 'var(--accent-emerald)', fontWeight: 600 }}>GPA: 3.75 / 4.00</span>
+              <span style={{ color: 'var(--accent-emerald)', fontWeight: 600 }}>Informatics Engineering</span>
             </div>
 
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.6 }}>
-              Coursework highlights: Software Engineering, Data Structures & Algorithms, Database Systems, Mobile Application Development, Web Engineering, and Computer Vision Capstone.
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.65 }}>
+              Undergraduate program focused on software engineering principles, fullstack web architectures (React, Next.js, Node.js), mobile development (Flutter, Kotlin, Jetpack Compose), geospatial data algorithms, and database system design.
             </p>
           </div>
         </div>

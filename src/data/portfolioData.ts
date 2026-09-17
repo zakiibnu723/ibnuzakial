@@ -27,8 +27,8 @@ export const PORTFOLIO_DATA = {
   profile: {
     name: "Ibnu Zaki Al",
     title: "Fullstack Web & Mobile Developer",
-    subtitle: "Fresh Graduate • Software Engineering",
-    shortBio: "Passionate Fresh Graduate Developer specializing in modern Fullstack Web (React / TypeScript / Next.js / Node.js) and Native & Cross-Platform Mobile Application Development (Kotlin / Flutter / Jetpack Compose). Dedicated to engineering high-performance software with clean architectures and intuitive user experiences.",
+    subtitle: "Informatics • UIN Sunan Kalijaga Yogyakarta (2022 — 2026 Expected)",
+    shortBio: "Informatics student at UIN Sunan Kalijaga Yogyakarta specializing in modern Fullstack Web Development (React / TypeScript / Next.js / Node.js) and Mobile Application Development (Flutter / Kotlin / Jetpack Compose). Winner of multiple national awards in web development and technological innovation competitions.",
     location: "Indonesia (Open to On-site, Hybrid & Remote)",
     status: "Available for Hire",
     email: "zakiibnu723@gmail.com",
@@ -38,7 +38,7 @@ export const PORTFOLIO_DATA = {
     linkedin: "https://linkedin.com/in/ibnuzakial",
     stats: [
       { label: "Completed Projects", value: "12+" },
-      { label: "Core Technologies", value: "8+" },
+      { label: "National Awards", value: "3" },
       { label: "Web & Mobile Apps", value: "6+" },
     ]
   },
@@ -108,52 +108,62 @@ export const PORTFOLIO_DATA = {
       ]
     },
     {
-      id: "taskflow-mobile",
-      title: "TaskFlow Mobile",
-      subtitle: "Modern Offline-First Native Android & Mobile Task Suite",
+      id: "voiz-ai",
+      title: "Voiz.AI 🎙️",
+      subtitle: "Native Android Voice Morphing & Zero-Shot Clone Studio",
       category: "mobile",
-      categoryLabel: "Mobile Engineering",
-      description: "Native mobile application built with 100% Kotlin & Jetpack Compose, featuring offline-first Room SQLite caching, smooth Material 3 animations, and companion Flutter architecture.",
-      longDescription: "A polished native mobile application designed with modern mobile best practices. Uses unidirectional data flow (MVVM/MVI), Kotlin Coroutines and StateFlow for reactive UI, Room database for instant offline access, and WorkManager for scheduled reminders.",
-      tags: ["Kotlin", "Jetpack Compose", "Flutter", "Coroutines & Flow", "Room DB", "Material 3", "Retrofit"],
+      categoryLabel: "Mobile Engineering & Audio",
+      description: "High-fidelity native Android application for voice cloning and neural speech transformation, featuring a dual-input Clone Studio, real-time voice tuning, and low-latency Cloudflare R2 streaming.",
+      longDescription: "Architected and engineered a native Android application built with Jetpack Compose, connecting to zero-shot voice synthesis backends and Cloudflare R2 audio pipelines. Features Obsidian glassmorphic design, dual-input audio cloning (live microphone recording & file picker), live speed/pitch tuning sliders, persistent local gallery with native system sharing, and a signed production release bundle for Google Play.",
+      tags: ["Android", "Kotlin", "Jetpack Compose", "FastAPI", "Supabase", "Cloudflare R2", "Hugging Face", "Neural Audio"],
       metrics: [
-        { label: "Architecture", value: "Clean MVVM" },
-        { label: "Offline Mode", value: "100% Functional" },
-        { label: "UI Framework", value: "Jetpack Compose" }
+        { label: "Platform", value: "Native Android" },
+        { label: "Target SDK", value: "Android 15 (SDK 36)" },
+        { label: "Audio Engine", value: "Cloudflare R2 CDN" }
       ],
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop",
-      githubUrl: "https://github.com/zakiibnu723/taskflow-android",
-      featured: false,
+      image: "/voiz-ai.png",
+      images: [
+        "/voiz-ai.png"
+      ],
+      githubUrl: "",
+      liveUrl: "",
+      featured: true,
       highlights: [
-        "Built purely with Jetpack Compose & Material 3 dynamic color theming",
-        "Offline-first architecture with Room SQLite database & DAO pattern",
-        "Coroutines & StateFlow for non-blocking asynchronous operations",
-        "Cross-platform architecture exploration using Flutter for shared business logic"
+        "Native Android Jetpack Compose UI with Obsidian glassmorphism and neon gradients",
+        "Dual-Input Clone Studio supporting live microphone recording and audio file picker",
+        "Real-time Voice Tuning Modal with live playback speed (0.7x–1.35x) and pitch depth sliders",
+        "Zero-shot neural voice profile resolution with Cloudflare R2 audio streaming pipeline",
+        "Persistent Local Gallery with native Android Intent sharing (WhatsApp, TikTok, Telegram)",
+        "Production-ready signed release bundle (v1.0, 11.4MB AAB) prepared for Google Play Console"
       ]
     },
     {
-      id: "omnicart-commerce",
-      title: "OmniCart Commerce",
-      subtitle: "Fullstack E-Commerce & Inventory Management Portal",
-      category: "web",
-      categoryLabel: "Fullstack Web",
-      description: "End-to-end web store and dashboard featuring product catalog, cart persistence, order processing, and administrative inventory controls.",
-      longDescription: "A complete fullstack web application crafted to solve real store management problems. Features JWT authentication, role-based access control (Admin & Customer), PostgreSQL database with Prisma ORM, and a responsive React frontend with instant search filtering.",
-      tags: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Prisma", "Tailwind CSS"],
+      id: "jsonflow",
+      title: "JSONFlow ⚡",
+      subtitle: "High-Performance Native Android JSON & API Tree Editor",
+      category: "mobile",
+      categoryLabel: "Mobile Engineering & DevTools",
+      description: "Engineered to solve severe usability bottlenecks in mobile developer tools: lag-free parsing of large JSON files (>50MB), interactive collapsible node hierarchy, and an ad-free experience.",
+      longDescription: "A developer-first Android utility built natively in Kotlin and Jetpack Compose to inspect, parse, validate, and format complex JSON and API responses on mobile devices. Eliminates annoying full-screen ads, laggy UI thread locks, and paywalls seen in legacy Play Store tools through virtualized tree rendering and blazing-fast streaming parsers.",
+      tags: ["Android", "Kotlin", "Jetpack Compose", "JSON Parser", "DevTools", "Performance Engine", "Mobile"],
       metrics: [
-        { label: "Database", value: "PostgreSQL" },
-        { label: "Auth Flow", value: "JWT + Cookies" },
-        { label: "Page Speed", value: "Sub-second" }
+        { label: "Platform", value: "Native Android" },
+        { label: "File Handling", value: "Up to 50MB+ No Lag" },
+        { label: "UX Philosophy", value: "100% Ad-Free DevTool" }
       ],
-      image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1200&auto=format&fit=crop",
-      githubUrl: "https://github.com/zakiibnu723/omnicart-fullstack",
-      liveUrl: "https://omnicart-demo.web.app",
-      featured: false,
+      image: "/jsonflow.png",
+      images: [
+        "/jsonflow.png"
+      ],
+      githubUrl: "",
+      liveUrl: "",
+      featured: true,
       highlights: [
-        "REST API built with Node.js, Express, and structured TypeScript controllers",
-        "Relational database schema with PostgreSQL, Prisma ORM, and seeders",
-        "Secure password hashing with bcrypt and JWT authorization middleware",
-        "Responsive administrative dashboard with charts and product inventory CRUD"
+        "High-throughput streaming parser handling heavy JSON datasets (>50MB) without UI thread freeze",
+        "Interactive collapsible tree hierarchy with syntax color tokens and deep node searching",
+        "Instant JSON syntax validation with precise error line highlighting",
+        "Zero obtrusive ads, tracking, or paywalls—pure developer-centric productivity workflow",
+        "Native file opener integration, clipboard formatting, and instant export/share utilities"
       ]
     }
   ] as Project[],
@@ -178,69 +188,65 @@ export const PORTFOLIO_DATA = {
     { name: "RESTful APIs", category: "backend", icon: "Network", badge: "Architecture" },
 
     // Mobile
-    { name: "Kotlin", category: "mobile", icon: "Smartphone", badge: "Android Core" },
     { name: "Flutter", category: "mobile", icon: "Layers", badge: "Cross-Platform" },
     { name: "Dart", category: "mobile", icon: "Code", badge: "Language" },
+    { name: "Kotlin", category: "mobile", icon: "Smartphone", badge: "Android Core" },
     { name: "Jetpack Compose", category: "mobile", icon: "Layers", badge: "Modern UI" },
-    { name: "Android Studio", category: "mobile", icon: "Cpu", badge: "IDE" },
-    { name: "Room SQLite", category: "mobile", icon: "Database", badge: "Local DB" },
-    { name: "Coroutines & Flow", category: "mobile", icon: "Activity", badge: "Async" },
-    { name: "Retrofit / OkHttp", category: "mobile", icon: "Network", badge: "Networking" },
 
     // Tools & Engineering
     { name: "Git & GitHub", category: "tools", icon: "GitBranch", badge: "VCS" },
-    { name: "Postman", category: "tools", icon: "Send", badge: "API Testing" },
     { name: "Leaflet / Geospatial", category: "tools", icon: "Globe", badge: "Mapping" },
     { name: "Chart.js", category: "tools", icon: "Activity", badge: "Analytics" },
-    { name: "Docker (Basic)", category: "tools", icon: "Box", badge: "DevOps" },
     { name: "VS Code", category: "tools", icon: "Terminal", badge: "Editor" },
-    { name: "Figma (UI Slice)", category: "tools", icon: "PenTool", badge: "Design" },
   ] as TechItem[],
 
   experiences: [
     {
-      period: "2024 — PRESENT",
-      role: "Junior Fullstack & Mobile Developer (Freelance / Projects)",
-      company: "Independent Developer",
-      location: "Indonesia",
-      description: "Developing fullstack web applications and native & cross-platform mobile apps (Kotlin & Flutter). Architecting clean RESTful backends with Next.js, Express, and FastAPI connected to SQLite and PostgreSQL.",
-      achievements: [
-        "Architected and deployed fullstack geospatial platform 'Indonesia Solar Energy Map' using Next.js, Leaflet, and Prisma.",
-        "Built and scaled 'Lively Weather' with server-side Visual Crossing API proxy and Chart.js forecast analytics.",
-        "Shipped native Android applications with Jetpack Compose, Room SQLite offline-first sync, and clean MVVM architecture."
-      ],
-      skills: ["Next.js", "React", "TypeScript", "Kotlin", "Flutter", "Prisma", "Leaflet", "Chart.js", "Tailwind"]
+      period: "September 29, 2025",
+      role: "2nd Place Winner (Silver) — Web Design Competition",
+      institution: "INTECH FEST 2025",
+      location: "Politeknik Negeri Bali (Bali, Indonesia)",
+      awardBadge: "2nd Place (Juara 2)",
+      description: "Engineered and designed a production-ready interactive web application showcasing Indonesia's prime tourist destinations, local culture, and travel attractions to elevate national tourism engagement.",
+      skills: ["Web Design", "UI/UX", "Frontend Engineering", "Tourism Platform"]
     },
     {
-      period: "2023 — 2024",
-      role: "Software Engineering Intern / Academic Capstone Lead",
-      company: "Tech Project Lab / Academic Capstone",
-      location: "Indonesia",
-      description: "Led a team of students in developing fullstack applications and native mobile prototypes. Implemented state management, database schema design, and API integrations.",
-      achievements: [
-        "Spearheaded database modeling and endpoint architecture for student management and geospatial data visualization capstone.",
-        "Implemented clean Git branching workflows, code reviews, and API documentation with Swagger/Postman.",
-        "Awarded Outstanding Capstone Project distinction for clean execution."
-      ],
-      skills: ["Kotlin", "Android", "React", "Node.js", "MySQL", "Git"]
+      period: "August 8, 2025",
+      role: "3rd Place Winner (Bronze) — Web Development Competition",
+      institution: "I/O FEST 2025",
+      location: "Universitas Tarumanagara (Jakarta, Indonesia)",
+      awardBadge: "3rd Place (Juara 3)",
+      description: "Developed a ready-to-deploy web application engineered to solve real-world educational challenges in Indonesia, directly supporting UN Sustainable Development Goals (SDG 4: Quality Education).",
+      skills: ["Web Development", "SDGs Quality Education", "React", "Fullstack Architecture"]
+    },
+    {
+      period: "January 12, 2025",
+      role: "National Finalist — National Innovation Week 3.0",
+      institution: "National Innovation Week Competition 3.0",
+      location: "Universitas Darussalam (UNIDA) Gontor",
+      awardBadge: "National Finalist",
+      description: "Formulated and presented an innovative technological platform addressing critical problems in the economic and business sectors through scalable, real-world software architecture.",
+      skills: ["Technology Innovation", "Business & Economy", "System Architecture", "Software Solution"]
     }
   ],
 
   cvDetails: {
-    summary: "Motivated Fresh Graduate in Computer Science / Software Engineering with a strong focus on modern Fullstack Web Development (Next.js, React, TypeScript, Node.js) and Native & Cross-Platform Mobile Development (Kotlin, Flutter, Jetpack Compose). Proven capability building production-grade web systems like interactive geospatial mapping and dynamic fullstack weather engines. Fast learner, detail-oriented, and ready to contribute directly to team engineering goals.",
+    summary: "Dedicated Informatics student at UIN Sunan Kalijaga Yogyakarta specializing in modern Fullstack Web Development (React, TypeScript, Next.js, Node.js) and Native & Cross-Platform Mobile Engineering (Flutter, Kotlin, Jetpack Compose). Winner of multiple national web development and innovation competitions (INTECH FEST 2025, I/O FEST 2025, NIW 3.0). Experienced in architecting production-grade platforms with clean code, responsive UI, and optimal performance.",
     education: [
       {
-        degree: "Bachelor of Science in Computer Science / Informatics",
-        institution: "Universitas / Institute of Technology",
-        year: "2020 — 2024",
-        gpa: "GPA: 3.75 / 4.00"
+        degree: "Bachelor of Science in Informatics / Computer Science (S1)",
+        institution: "UIN Sunan Kalijaga Yogyakarta",
+        year: "2022 — 2026 (Expected)",
+        gpa: "Informatics Engineering"
       }
     ],
     certifications: [
-      "Modern Android Development with Kotlin & Jetpack Compose",
-      "Cross-Platform Mobile Application Development with Flutter",
-      "Fullstack Web Development with Next.js, React & Node.js",
-      "Database Design & ORM Integration with Prisma & PostgreSQL"
+      "2nd Place Winner (Juara 2) — Web Design Competition, INTECH FEST 2025 (Politeknik Negeri Bali)",
+      "3rd Place Winner (Juara 3) — Web Development Competition, I/O FEST 2025 (Universitas Tarumanagara Jakarta)",
+      "National Finalist — National Innovation Week 3.0 (Universitas Darussalam Gontor)",
+      "Mobile Application Development with Flutter & Native Kotlin",
+      "Fullstack Web Engineering with Next.js, React, Node.js & TypeScript",
+      "Geospatial Data Visualization & Leaflet Interactive Mapping"
     ]
   }
 };
