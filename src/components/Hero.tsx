@@ -136,7 +136,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
                 marginBottom: '1.35rem',
               }}
             >
-              Hi, I'm <strong style={{ color: '#fff' }}>{PORTFOLIO_DATA.profile.name}</strong>. Informatics student at UIN Sunan Kalijaga Yogyakarta focused on engineering reliable web systems (Next.js, React, TypeScript, Node.js) and high-performance mobile applications (Flutter, Kotlin). Winner of multiple national software competitions.
+              Hi, I'm <strong style={{ color: '#fff' }}>{PORTFOLIO_DATA.profile.name}</strong>. Fullstack Web & Mobile Developer focused on engineering <strong style={{ color: '#c7d2fe' }}>production-ready applications</strong> and scalable digital solutions. I transform real-world problems into high-performance web platforms and intuitive mobile apps that prioritize smooth user experiences, solid architecture, and measurable impact.
             </p>
 
             {/* Quick Action CTAs */}

@@ -89,21 +89,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv }) => {
         >
           <div
             style={{
-              width: '34px',
-              height: '34px',
-              borderRadius: '9px',
-              background: 'linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 0 15px rgba(99, 102, 241, 0.35)',
-              color: '#ffffff',
-              fontWeight: 800,
-              fontSize: '0.9rem',
+              width: '36px',
+              height: '36px',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              border: '2px solid rgba(6, 182, 212, 0.45)',
+              boxShadow: '0 0 14px rgba(6, 182, 212, 0.3)',
               flexShrink: 0,
+              background: '#090b10',
             }}
           >
-            IZ
+            <img
+              src="/profile.png"
+              alt={PORTFOLIO_DATA.profile.name}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center top',
+              }}
+            />
           </div>
 
           <div>

@@ -157,7 +157,7 @@ export const ExperienceTimeline: React.FC = () => {
             </div>
 
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.65 }}>
-              Undergraduate program focused on software engineering principles, fullstack web architectures (React, Next.js, Node.js), mobile development (Flutter, Kotlin, Jetpack Compose), geospatial data algorithms, and database system design.
+              Focused on modern software engineering disciplines with an emphasis on Fullstack Web Engineering, Mobile Application Development, Interactive Data Visualization, and Real-Time Monitoring Systems. Experienced in building scalable digital solutions from design to deployment, with a strong foundation in database architecture, responsive UI engineering, and clean code practices.
             </p>
           </div>
         </div>

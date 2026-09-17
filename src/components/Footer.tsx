@@ -36,19 +36,25 @@ export const Footer: React.FC = () => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.25rem' }}>
               <div
                 style={{
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '8px',
-                  background: 'linear-gradient(135deg, #6366f1 0%, #06b6d4 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#ffffff',
-                  fontWeight: 800,
-                  fontSize: '0.85rem',
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                  border: '1.5px solid rgba(6, 182, 212, 0.45)',
+                  flexShrink: 0,
+                  background: '#090b10',
                 }}
               >
-                IZ
+                <img
+                  src="/profile.png"
+                  alt={PORTFOLIO_DATA.profile.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center top',
+                  }}
+                />
               </div>
               <span style={{ fontWeight: 800, fontSize: '1.05rem', color: '#ffffff' }}>
                 {PORTFOLIO_DATA.profile.name}
