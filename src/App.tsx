@@ -4,16 +4,21 @@ import { CustomCursor } from './components/CustomCursor';
 import { ParticleMeshCanvas } from './components/ParticleMeshCanvas';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { TechMarqueeSlider } from './components/TechMarqueeSlider';
 import { ProjectShowcase } from './components/ProjectShowcase';
 import { TechMatrix } from './components/TechMatrix';
 import { ExperienceTimeline } from './components/ExperienceTimeline';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { CvModal } from './components/CvModal';
+import { useScrollObserver } from './hooks/useScrollObserver';
 
 export const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [cvOpen, setCvOpen] = useState(false);
+
+  // Initialize scroll-triggered reveal observer
+  useScrollObserver();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -47,6 +52,7 @@ export const App: React.FC = () => {
       {/* Main Clean Sections (10-Second Recruiter Friendly) */}
       <main style={{ position: 'relative', zIndex: 1 }}>
         <Hero onOpenCv={() => setCvOpen(true)} />
+        <TechMarqueeSlider />
         <ProjectShowcase />
         <TechMatrix />
         <ExperienceTimeline />

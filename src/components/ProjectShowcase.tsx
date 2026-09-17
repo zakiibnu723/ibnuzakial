@@ -117,7 +117,7 @@ export const ProjectShowcase: React.FC = () => {
     <section id="projects" style={{ padding: '5.5rem 0', position: 'relative' }}>
       <div className="container-custom">
         {/* Section Header */}
-        <div style={{ marginBottom: '2.75rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+        <div className="scroll-reveal" style={{ marginBottom: '2.75rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
           <div
             style={{
               display: 'inline-flex',
@@ -154,6 +154,7 @@ export const ProjectShowcase: React.FC = () => {
 
           {/* Filter Pills */}
           <div
+            className="scroll-reveal stagger-1"
             style={{
               display: 'flex',
               flexWrap: 'wrap',
@@ -198,13 +199,14 @@ export const ProjectShowcase: React.FC = () => {
             gap: '2rem',
           }}
         >
-          {filteredProjects.map((project) => {
+          {filteredProjects.map((project, pIdx) => {
             const projectImages = project.images && project.images.length > 0 ? project.images : [project.image];
+            const staggerClass = `stagger-${(pIdx % 3) + 1}`;
 
             return (
               <div
                 key={project.id}
-                className="glass-panel-interactive"
+                className={`glass-panel-interactive scroll-reveal ${staggerClass}`}
                 style={{
                   display: 'flex',
                   flexDirection: 'column',

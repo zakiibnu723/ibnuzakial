@@ -56,6 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
       <div className="container-custom" style={{ position: 'relative', zIndex: 10 }}>
         {/* Top Badges (Compact) */}
         <div
+          className="hero-enter-badges"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -115,6 +116,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
           {/* Left Column: Heading, Bio, CTAs & Tech */}
           <div>
             <h1
+              className="hero-enter-title"
               style={{
                 fontSize: 'clamp(2rem, 4.2vw, 3.4rem)',
                 lineHeight: 1.12,
@@ -128,6 +130,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
             </h1>
 
             <p
+              className="hero-enter-bio"
               style={{
                 fontSize: '0.98rem',
                 color: 'var(--text-secondary)',
@@ -141,6 +144,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
 
             {/* Quick Action CTAs */}
             <div
+              className="hero-enter-ctas"
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
@@ -183,7 +187,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
             </div>
 
             {/* Core Tech Stack Pills */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
+            <div className="hero-enter-stack" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
               <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', marginRight: '0.3rem' }}>
                 STACK:
               </span>
@@ -196,7 +200,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
           </div>
 
           {/* Right Column: Compact Sleek Profile Card */}
-          <div>
+          <div className="hero-enter-profile">
             <div
               className="glass-panel"
               style={{
@@ -312,7 +316,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
             backdropFilter: 'blur(16px)',
             border: '1px solid var(--border-subtle)',
           }}
-          className="hero-stats-box"
+          className="hero-stats-box hero-enter-stats"
         >
           <div className="hero-stats-grid">
             {PORTFOLIO_DATA.profile.stats.map((stat, idx) => (

@@ -21,8 +21,7 @@ import {
   GitBranch, 
   Send, 
   Box, 
-  PenTool,
-  CheckCircle2
+  PenTool
 } from 'lucide-react';
 
 export const TechMatrix: React.FC = () => {
@@ -71,7 +70,7 @@ export const TechMatrix: React.FC = () => {
     <section id="skills" style={{ padding: '5.5rem 0', position: 'relative' }}>
       <div className="container-custom">
         {/* Section Header */}
-        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        <div className="scroll-reveal" style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <div
             style={{
               display: 'inline-flex',
@@ -101,6 +100,7 @@ export const TechMatrix: React.FC = () => {
 
           {/* Tab Filter Buttons */}
           <div
+            className="scroll-reveal stagger-1"
             style={{
               display: 'flex',
               justifyContent: 'center',
@@ -146,10 +146,10 @@ export const TechMatrix: React.FC = () => {
             gap: '1rem',
           }}
         >
-          {filteredTech.map((item) => (
+          {filteredTech.map((item, tIdx) => (
             <div
               key={item.name}
-              className="glass-panel"
+              className={`glass-panel scroll-reveal stagger-${(tIdx % 4) + 1}`}
               style={{
                 padding: '1.15rem',
                 borderRadius: '16px',
@@ -202,46 +202,6 @@ export const TechMatrix: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Recruiter 10-Second Summary Callout */}
-        <div
-          style={{
-            marginTop: '3rem',
-            padding: '1.5rem 2rem',
-            borderRadius: '18px',
-            background: 'rgba(99, 102, 241, 0.06)',
-            border: '1px solid rgba(99, 102, 241, 0.2)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '1rem',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <CheckCircle2 size={20} style={{ color: 'var(--accent-emerald)' }} />
-            <span style={{ fontSize: '0.925rem', color: '#e2e8f0' }}>
-              <strong>Pragmatic Fullstack Capability:</strong> Ready to build responsive React web interfaces, develop robust FastAPI/Node APIs, or deliver native Android Kotlin apps.
-            </span>
-          </div>
-
-          <a
-            href="#projects"
-            style={{
-              color: 'var(--accent-cyan)',
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              textDecoration: 'none',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.35rem',
-            }}
-            onClick={() => sfx.playClick()}
-          >
-            <span>See Project Implementations</span>
-            <span>&rarr;</span>
-          </a>
         </div>
       </div>
     </section>

@@ -93,7 +93,7 @@ export const ContactSection: React.FC = () => {
     <section id="contact" style={{ padding: '5.5rem 0', position: 'relative' }}>
       <div className="container-custom">
         {/* Section Header */}
-        <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+        <div className="scroll-reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
           <div
             style={{
               display: 'inline-flex',
@@ -134,7 +134,7 @@ export const ContactSection: React.FC = () => {
           className="contact-grid"
         >
           {/* Left Column: Direct Contact Info Cards */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <div className="scroll-reveal scroll-reveal-left" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             {/* Email Card (With Direct Mailto & Copy) */}
             <div
               className="glass-panel"
@@ -267,7 +267,7 @@ export const ContactSection: React.FC = () => {
 
           {/* Right Column: Direct Message Form (Dispatches directly to email) */}
           <div
-            className="glass-panel"
+            className="glass-panel scroll-reveal scroll-reveal-right"
             style={{
               padding: '2rem',
               borderRadius: '20px',

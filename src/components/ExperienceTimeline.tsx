@@ -106,7 +106,7 @@ export const ExperienceTimeline: React.FC = () => {
     <section id="experience" style={{ padding: '5.5rem 0', position: 'relative' }}>
       <div className="container-custom">
         {/* Section Header */}
-        <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+        <div className="scroll-reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
           <div
             style={{
               display: 'inline-flex',
@@ -149,7 +149,7 @@ export const ExperienceTimeline: React.FC = () => {
           {PORTFOLIO_DATA.experiences.map((exp, idx) => (
             <div
               key={idx}
-              className="glass-panel"
+              className={`glass-panel scroll-reveal stagger-${(idx % 3) + 1}`}
               style={{
                 padding: '1.5rem 1.75rem',
                 borderRadius: '20px',
@@ -279,7 +279,7 @@ export const ExperienceTimeline: React.FC = () => {
 
           {/* Education Card */}
           <div
-            className="glass-panel"
+            className="glass-panel scroll-reveal"
             style={{
               padding: '1.75rem 2rem',
               borderRadius: '20px',
