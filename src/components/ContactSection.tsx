@@ -13,7 +13,7 @@ import {
   ExternalLink,
   Sparkles
 } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { GithubIcon } from './SocialIcons';
 
 export const ContactSection: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -250,28 +250,17 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Social Links */}
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
+            <div style={{ display: 'flex' }}>
               <a
                 href={PORTFOLIO_DATA.profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"
-                style={{ flex: 1, padding: '0.65rem', fontSize: '0.825rem' }}
+                style={{ width: '100%', padding: '0.65rem', fontSize: '0.825rem', justifyContent: 'center' }}
                 onClick={() => sfx.playClick()}
               >
-                <GithubIcon size={15} />
-                <span>GitHub</span>
-              </a>
-              <a
-                href={PORTFOLIO_DATA.profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-                style={{ flex: 1, padding: '0.65rem', fontSize: '0.825rem' }}
-                onClick={() => sfx.playClick()}
-              >
-                <LinkedinIcon size={15} />
-                <span>LinkedIn</span>
+                <GithubIcon size={16} />
+                <span>Visit GitHub Profile</span>
               </a>
             </div>
           </div>

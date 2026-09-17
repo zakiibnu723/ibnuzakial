@@ -339,6 +339,21 @@ h1, h2, h3, h4, .font-heading {
   background: rgba(99, 102, 241, 0.08);
 }
 
+/* Experience & Competition card with slideshow */
+.experience-card-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .experience-card-layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
 @media (max-width: 768px) {
   .custom-cursor-dot, .custom-cursor-ring {
     display: none !important;

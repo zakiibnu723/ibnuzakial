@@ -8,7 +8,7 @@ import {
   MapPin,
   Sparkles
 } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { GithubIcon } from './SocialIcons';
 import { AnimatedCounter } from './AnimatedCounter';
 
 interface HeroProps {
@@ -285,29 +285,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
               </div>
 
               {/* Social Links Row */}
-              <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem', paddingTop: '0.85rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+              <div style={{ marginTop: '1rem', paddingTop: '0.85rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
                 <a
                   href={PORTFOLIO_DATA.profile.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"
-                  style={{ flex: 1, padding: '0.5rem', fontSize: '0.78rem' }}
+                  style={{ width: '100%', padding: '0.6rem', fontSize: '0.82rem', justifyContent: 'center' }}
                   onClick={() => sfx.playClick()}
                 >
-                  <GithubIcon size={14} />
-                  <span>GitHub</span>
-                </a>
-
-                <a
-                  href={PORTFOLIO_DATA.profile.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary"
-                  style={{ flex: 1, padding: '0.5rem', fontSize: '0.78rem' }}
-                  onClick={() => sfx.playClick()}
-                >
-                  <LinkedinIcon size={14} />
-                  <span>LinkedIn</span>
+                  <GithubIcon size={15} />
+                  <span>GitHub Profile</span>
                 </a>
               </div>
             </div>

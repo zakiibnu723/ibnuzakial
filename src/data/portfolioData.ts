@@ -24,6 +24,17 @@ export interface TechItem {
   badge?: string;
 }
 
+export interface ExperienceItem {
+  period: string;
+  role: string;
+  institution: string;
+  location: string;
+  awardBadge: string;
+  description: string;
+  skills: string[];
+  images?: string[];
+}
+
 export const PORTFOLIO_DATA = {
   profile: {
     name: "Ibnu Zaki Al",
@@ -38,13 +49,71 @@ export const PORTFOLIO_DATA = {
     github: "https://github.com/zakiibnu723",
     linkedin: "https://linkedin.com/in/ibnuzakial",
     stats: [
-      { label: "Completed Projects", value: "14+" },
+      { label: "Completed Projects", value: "23+" },
       { label: "National Awards", value: "3" },
-      { label: "Web, Mobile & IoT", value: "8+" },
+      { label: "Web, Mobile & IoT", value: "10+" },
     ]
   },
 
   projects: [
+    {
+      id: "esp32-iot-telemetry",
+      title: "ESP32 End-to-End IoT Telemetry & Monitoring Architecture",
+      subtitle: "Closed-Loop Embedded IoT Telemetry & Centralized Web Platform",
+      category: "iot",
+      categoryLabel: "IoT & Embedded Systems",
+      description: "Architected a complete closed-loop IoT ecosystem integrating multi-node ESP32 devices, a centralized HTTP REST API, SQL Server, and an interactive React web dashboard.",
+      longDescription: "A complete end-to-end telemetry pipeline connecting edge microcontrollers with enterprise web applications. Standardized bi-directional JSON payload formats for real-time sensor ingestion (POST) and dynamic web metric queries (GET). Built a responsive dashboard featuring multi-device status monitoring, historical time-series charts, and data filtering by device ID and timestamps.",
+      tags: ["ESP32", "IoT Sensors", "HTTP REST API", "SQL Server", "React.js", "C/C++", "Telemetry"],
+      metrics: [
+        { label: "Hardware", value: "Multi-Node ESP32" },
+        { label: "Protocol", value: "HTTP REST JSON" },
+        { label: "Storage", value: "SQL Server" }
+      ],
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+      ],
+      githubUrl: "",
+      liveUrl: "",
+      hideExternalLinks: true,
+      featured: true,
+      highlights: [
+        "Architected a complete closed-loop IoT ecosystem integrating multi-node ESP32 devices, centralized HTTP REST API, SQL Server, and interactive React web dashboard",
+        "Standardized bi-directional JSON payload formats for real-time sensor ingestion (POST) and dynamic web metric queries (GET)",
+        "Built a responsive dashboard featuring multi-device status monitoring, historical time-series charts, and data filtering by device ID and timestamps",
+        "Robust edge network reconnection routines ensuring zero data loss during intermittent Wi-Fi dropouts"
+      ]
+    },
+    {
+      id: "esp32-environmental-logger",
+      title: "ESP32 Multi-Sensor Environmental Data Logger",
+      subtitle: "Edge Multi-Variable Logging & Analytical Time-Series Platform",
+      category: "iot",
+      categoryLabel: "IoT & Embedded Systems",
+      description: "Built an edge data logging system capturing multi-variable environmental and inertial data at scheduled intervals using an ESP32 and precision sensors (DHT22, DS18B20, MPU6050, RTC).",
+      longDescription: "Engineered an industrial-grade edge logging solution to monitor multi-point temperature, humidity, and vibration parameters. Optimized network reliability by bundling timestamped sensor packets with fallback local queuing for uninterrupted telemetry transmission, complemented by an analytical React visualizer.",
+      tags: ["ESP32", "DHT22 / DS18B20", "MPU6050", "RTC Module", "Wi-Fi", "SQL Server", "React.js"],
+      metrics: [
+        { label: "Sensors", value: "DHT22 / DS18B20 / MPU" },
+        { label: "Edge Sync", value: "RTC Timestamped" },
+        { label: "Reliability", value: "Fallback Queuing" }
+      ],
+      image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=1200&auto=format&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=1200&auto=format&fit=crop"
+      ],
+      githubUrl: "",
+      liveUrl: "",
+      hideExternalLinks: true,
+      featured: true,
+      highlights: [
+        "Built an edge data logging system capturing multi-variable environmental and inertial data at scheduled intervals using an ESP32 and precision sensors",
+        "Optimized network reliability by bundling timestamped sensor packets with fallback queuing for uninterrupted telemetry transmission",
+        "Delivered a web visualizer enabling granular date-range filtering, device selection, and exportable analytical charts",
+        "Integrated precision hardware RTC module ensuring accurate time-series logging during power cycles"
+      ]
+    },
     {
       id: "lively-weather",
       title: "Lively Weather ⛅",
@@ -164,64 +233,6 @@ export const PORTFOLIO_DATA = {
         "Real-time JSON validation with precise error indicators and line pinpointing",
         "One-click formatting, beautification, clipboard copying, and file export for rapid testing"
       ]
-    },
-    {
-      id: "esp32-iot-telemetry",
-      title: "ESP32 End-to-End IoT Telemetry & Monitoring Architecture",
-      subtitle: "Closed-Loop Embedded IoT Telemetry & Centralized Web Platform",
-      category: "iot",
-      categoryLabel: "IoT & Embedded Systems",
-      description: "Architected a complete closed-loop IoT ecosystem integrating multi-node ESP32 devices, a centralized HTTP REST API, SQL Server, and an interactive React web dashboard.",
-      longDescription: "A complete end-to-end telemetry pipeline connecting edge microcontrollers with enterprise web applications. Standardized bi-directional JSON payload formats for real-time sensor ingestion (POST) and dynamic web metric queries (GET). Built a responsive dashboard featuring multi-device status monitoring, historical time-series charts, and data filtering by device ID and timestamps.",
-      tags: ["ESP32", "IoT Sensors", "HTTP REST API", "SQL Server", "React.js", "C/C++", "Telemetry"],
-      metrics: [
-        { label: "Hardware", value: "Multi-Node ESP32" },
-        { label: "Protocol", value: "HTTP REST JSON" },
-        { label: "Storage", value: "SQL Server" }
-      ],
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
-      images: [
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
-      ],
-      githubUrl: "",
-      liveUrl: "",
-      hideExternalLinks: true,
-      featured: true,
-      highlights: [
-        "Architected a complete closed-loop IoT ecosystem integrating multi-node ESP32 devices, centralized HTTP REST API, SQL Server, and interactive React web dashboard",
-        "Standardized bi-directional JSON payload formats for real-time sensor ingestion (POST) and dynamic web metric queries (GET)",
-        "Built a responsive dashboard featuring multi-device status monitoring, historical time-series charts, and data filtering by device ID and timestamps",
-        "Robust edge network reconnection routines ensuring zero data loss during intermittent Wi-Fi dropouts"
-      ]
-    },
-    {
-      id: "esp32-environmental-logger",
-      title: "ESP32 Multi-Sensor Environmental Data Logger",
-      subtitle: "Edge Multi-Variable Logging & Analytical Time-Series Platform",
-      category: "iot",
-      categoryLabel: "IoT & Embedded Systems",
-      description: "Built an edge data logging system capturing multi-variable environmental and inertial data at scheduled intervals using an ESP32 and precision sensors (DHT22, DS18B20, MPU6050, RTC).",
-      longDescription: "Engineered an industrial-grade edge logging solution to monitor multi-point temperature, humidity, and vibration parameters. Optimized network reliability by bundling timestamped sensor packets with fallback local queuing for uninterrupted telemetry transmission, complemented by an analytical React visualizer.",
-      tags: ["ESP32", "DHT22 / DS18B20", "MPU6050", "RTC Module", "Wi-Fi", "SQL Server", "React.js"],
-      metrics: [
-        { label: "Sensors", value: "DHT22 / DS18B20 / MPU" },
-        { label: "Edge Sync", value: "RTC Timestamped" },
-        { label: "Reliability", value: "Fallback Queuing" }
-      ],
-      image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=1200&auto=format&fit=crop",
-      images: [
-        "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=1200&auto=format&fit=crop"
-      ],
-      githubUrl: "",
-      liveUrl: "",
-      hideExternalLinks: true,
-      featured: true,
-      highlights: [
-        "Built an edge data logging system capturing multi-variable environmental and inertial data at scheduled intervals using an ESP32 and precision sensors",
-        "Optimized network reliability by bundling timestamped sensor packets with fallback queuing for uninterrupted telemetry transmission",
-        "Delivered a web visualizer enabling granular date-range filtering, device selection, and exportable analytical charts",
-        "Integrated precision hardware RTC module ensuring accurate time-series logging during power cycles"
-      ]
     }
   ] as Project[],
 
@@ -267,7 +278,11 @@ export const PORTFOLIO_DATA = {
       location: "Politeknik Negeri Bali (Bali, Indonesia)",
       awardBadge: "2nd Place (Juara 2)",
       description: "Engineered and designed a production-ready interactive web application showcasing Indonesia's prime tourist destinations, local culture, and travel attractions to elevate national tourism engagement.",
-      skills: ["Web Design", "UI/UX", "Frontend Engineering", "Tourism Platform"]
+      skills: ["Web Design", "UI/UX", "Frontend Engineering", "Tourism Platform"],
+      images: [
+        "/intech-fest-2025.jpg",
+        "/intech-fest-2.jpg"
+      ]
     },
     {
       period: "August 8, 2025",
@@ -276,7 +291,11 @@ export const PORTFOLIO_DATA = {
       location: "Universitas Tarumanagara (Jakarta, Indonesia)",
       awardBadge: "3rd Place (Juara 3)",
       description: "Developed a ready-to-deploy web application engineered to solve real-world educational challenges in Indonesia, directly supporting UN Sustainable Development Goals (SDG 4: Quality Education).",
-      skills: ["Web Development", "SDGs Quality Education", "React", "Fullstack Architecture"]
+      skills: ["Web Development", "SDGs Quality Education", "React", "Fullstack Architecture"],
+      images: [
+        "/io-fest-2025.jpg",
+        "/io-fest-2.jpg"
+      ]
     },
     {
       period: "January 12, 2025",
@@ -284,13 +303,17 @@ export const PORTFOLIO_DATA = {
       institution: "National Innovation Week Competition 3.0",
       location: "Universitas Darussalam (UNIDA) Gontor",
       awardBadge: "National Finalist",
-      description: "Formulated and presented an innovative technological platform addressing critical problems in the economic and business sectors through scalable, real-world software architecture.",
-      skills: ["Technology Innovation", "Business & Economy", "System Architecture", "Software Solution"]
+      description: "Formulated and presented an innovative technological platform centered on 'Inovasi Teknologi dalam Transformasi Bisnis di Era Digital' (Technological Innovation in Business Transformation in the Digital Era), architecting a scalable digital solution to accelerate business modernization and economic efficiency.",
+      skills: ["Digital Business Transformation", "Technological Innovation", "Fullstack Architecture", "Digital Economy"],
+      images: [
+        "/niw-unida-2025.jpg",
+        "/niw-unida-2.png"
+      ]
     }
-  ],
+  ] as ExperienceItem[],
 
   cvDetails: {
-    summary: "Dedicated Informatics student at UIN Sunan Kalijaga Yogyakarta specializing in modern Fullstack Web Development (React, TypeScript, Next.js, Node.js) and Native & Cross-Platform Mobile Engineering (Flutter, Kotlin, Jetpack Compose). Winner of multiple national web development and innovation competitions (INTECH FEST 2025, I/O FEST 2025, NIW 3.0). Experienced in architecting production-grade platforms, interactive data visualization, and scalable monitoring systems.",
+    summary: "Dedicated Informatics student at UIN Sunan Kalijaga Yogyakarta specializing in modern Fullstack Web Development (React, TypeScript, Next.js, Node.js) and Native & Cross-Platform Mobile Engineering (Flutter, Kotlin, Jetpack Compose) with IoT Integration capabilities (ESP32, REST APIs, SQL Server). Winner of multiple national web development and innovation competitions (INTECH FEST 2025, I/O FEST 2025, NIW 3.0). Experienced in architecting production-grade platforms, interactive data visualization, and scalable telemetry monitoring systems.",
     education: [
       {
         degree: "Bachelor of Science in Informatics / Computer Science (S1)",
@@ -303,6 +326,7 @@ export const PORTFOLIO_DATA = {
       "2nd Place Winner (Juara 2) — Web Design Competition, INTECH FEST 2025 (Politeknik Negeri Bali)",
       "3rd Place Winner (Juara 3) — Web Development Competition, I/O FEST 2025 (Universitas Tarumanagara Jakarta)",
       "National Finalist — National Innovation Week 3.0 (Universitas Darussalam Gontor)",
+      "ESP32 End-to-End IoT Telemetry & Industrial Data Logging Systems",
       "Mobile Application Development with Flutter & Native Kotlin",
       "Fullstack Web Engineering with Next.js, React, Node.js & TypeScript",
       "Interactive Data Visualization & Real-Time Monitoring Systems"

@@ -2,7 +2,7 @@ import React from 'react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 import { sfx } from '../utils/soundEffects';
 import { ArrowUp } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { GithubIcon } from './SocialIcons';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -84,25 +84,6 @@ export const Footer: React.FC = () => {
               }}
             >
               <GithubIcon size={16} />
-            </a>
-
-            <a
-              href={PORTFOLIO_DATA.profile.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                background: 'rgba(255, 255, 255, 0.05)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--text-secondary)',
-                textDecoration: 'none',
-              }}
-            >
-              <LinkedinIcon size={16} />
             </a>
 
             <button
