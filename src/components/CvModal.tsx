@@ -186,8 +186,8 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Flutter, Dart, Kotlin, Jetpack Compose</div>
               </div>
               <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '0.85rem', borderRadius: '10px' }}>
-                <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#ffffff', marginBottom: '0.25rem' }}>Tools & Engineering:</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Git, GitHub, Leaflet, Chart.js, VS Code, REST APIs</div>
+                <div style={{ fontWeight: 700, fontSize: '0.85rem', color: '#ffffff', marginBottom: '0.25rem' }}>Tools & IoT Integration:</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Git, GitHub, ESP32, IoT Sensors, Leaflet, Chart.js, VS Code, REST APIs</div>
               </div>
             </div>
           </div>

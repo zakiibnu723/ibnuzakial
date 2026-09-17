@@ -99,13 +99,14 @@ const ProjectImageSlideshow: React.FC<{ images: string[]; title: string; height?
 };
 
 export const ProjectShowcase: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<'all' | 'web' | 'mobile'>('all');
+  const [activeCategory, setActiveCategory] = useState<'all' | 'web' | 'mobile' | 'iot'>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const categories = [
     { id: 'all', label: 'All Projects' },
     { id: 'web', label: 'Fullstack Web' },
-    { id: 'mobile', label: 'Mobile Engineering' },
+    { id: 'mobile', label: 'Mobile Apps' },
+    { id: 'iot', label: 'IoT & Telemetry' },
   ];
 
   const filteredProjects = activeCategory === 'all' 
@@ -273,40 +274,15 @@ export const ProjectShowcase: React.FC = () => {
                     {project.description}
                   </p>
 
-                  {/* Key Metrics Grid */}
-                  <div
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(3, 1fr)',
-                      gap: '0.4rem',
-                      marginBottom: '1.25rem',
-                      padding: '0.65rem',
-                      background: 'rgba(255, 255, 255, 0.02)',
-                      borderRadius: '10px',
-                      border: '1px solid rgba(255, 255, 255, 0.05)',
-                    }}
-                  >
-                    {project.metrics.map((m) => (
-                      <div key={m.label} style={{ textAlign: 'center' }}>
-                        <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#f8fafc', fontFamily: 'var(--font-mono)' }}>
-                          {m.value}
-                        </div>
-                        <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
-                          {m.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Tech Tags */}
+                  {/* Tech Tags (Directly after description) */}
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1.25rem' }}>
-                    {project.tags.slice(0, 4).map((tag) => (
+                    {project.tags.slice(0, 5).map((tag) => (
                       <span key={tag} className="tech-pill">
                         {tag}
                       </span>
                     ))}
-                    {project.tags.length > 4 && (
-                      <span className="tech-pill">+{project.tags.length - 4}</span>
+                    {project.tags.length > 5 && (
+                      <span className="tech-pill">+{project.tags.length - 5}</span>
                     )}
                   </div>
 
@@ -344,69 +320,71 @@ export const ProjectShowcase: React.FC = () => {
                       <ArrowUpRight size={15} />
                     </button>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      {project.githubUrl ? (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="GitHub Repository"
-                          onClick={() => sfx.playClick()}
-                          style={{
-                            width: '34px',
-                            height: '34px',
-                            borderRadius: '50%',
-                            background: 'rgba(255, 255, 255, 0.05)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: 'var(--text-secondary)',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          <GithubIcon size={16} />
-                        </a>
-                      ) : (
-                        <span
-                          title="Source Code: In Active Development"
-                          style={{
-                            padding: '0.2rem 0.55rem',
-                            borderRadius: 'var(--radius-full)',
-                            background: 'rgba(255, 255, 255, 0.04)',
-                            border: '1px solid rgba(255, 255, 255, 0.08)',
-                            fontSize: '0.7rem',
-                            color: 'var(--text-muted)',
-                            fontFamily: 'var(--font-mono)',
-                          }}
-                        >
-                          In Progress
-                        </span>
-                      )}
+                    {!project.hideExternalLinks && (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        {project.githubUrl ? (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="GitHub Repository"
+                            onClick={() => sfx.playClick()}
+                            style={{
+                              width: '34px',
+                              height: '34px',
+                              borderRadius: '50%',
+                              background: 'rgba(255, 255, 255, 0.05)',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              color: 'var(--text-secondary)',
+                              textDecoration: 'none',
+                            }}
+                          >
+                            <GithubIcon size={16} />
+                          </a>
+                        ) : (
+                          <span
+                            title="Source Code: In Active Development"
+                            style={{
+                              padding: '0.2rem 0.55rem',
+                              borderRadius: 'var(--radius-full)',
+                              background: 'rgba(255, 255, 255, 0.04)',
+                              border: '1px solid rgba(255, 255, 255, 0.08)',
+                              fontSize: '0.7rem',
+                              color: 'var(--text-muted)',
+                              fontFamily: 'var(--font-mono)',
+                            }}
+                          >
+                            In Progress
+                          </span>
+                        )}
 
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="Live Demo"
-                          onClick={() => sfx.playClick()}
-                          style={{
-                            width: '34px',
-                            height: '34px',
-                            borderRadius: '50%',
-                            background: 'rgba(6, 182, 212, 0.1)',
-                            border: '1px solid rgba(6, 182, 212, 0.3)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: 'var(--accent-cyan)',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          <ExternalLink size={15} />
-                        </a>
-                      )}
-                    </div>
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Live Demo"
+                            onClick={() => sfx.playClick()}
+                            style={{
+                              width: '34px',
+                              height: '34px',
+                              borderRadius: '50%',
+                              background: 'rgba(6, 182, 212, 0.1)',
+                              border: '1px solid rgba(6, 182, 212, 0.3)',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              color: 'var(--accent-cyan)',
+                              textDecoration: 'none',
+                            }}
+                          >
+                            <ExternalLink size={15} />
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -540,70 +518,92 @@ export const ProjectShowcase: React.FC = () => {
             </div>
 
             {/* Bottom Actions */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
-              {selectedProject.liveUrl ? (
-                <a
-                  href={selectedProject.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary"
-                  onClick={() => sfx.playClick()}
-                  style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
-                >
-                  <ExternalLink size={15} />
-                  <span>Launch Live Platform</span>
-                </a>
-              ) : (
+            {selectedProject.hideExternalLinks ? (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
                 <div
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '0.4rem',
-                    padding: '0.55rem 1rem',
+                    gap: '0.45rem',
+                    padding: '0.5rem 1.15rem',
                     borderRadius: 'var(--radius-full)',
-                    background: 'rgba(6, 182, 212, 0.08)',
-                    border: '1px solid rgba(6, 182, 212, 0.25)',
-                    color: 'var(--accent-cyan)',
+                    background: 'rgba(16, 185, 129, 0.1)',
+                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    color: 'var(--accent-emerald)',
                     fontSize: '0.8rem',
                     fontFamily: 'var(--font-mono)',
+                    fontWeight: 600,
                   }}
                 >
-                  <span>Play Store / Web: Coming Soon</span>
+                  <span>⚡ Embedded Hardware & Telemetry Architecture</span>
                 </div>
-              )}
+              </div>
+            ) : (
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                {selectedProject.liveUrl ? (
+                  <a
+                    href={selectedProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                    onClick={() => sfx.playClick()}
+                    style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
+                  >
+                    <ExternalLink size={15} />
+                    <span>Launch Live Platform</span>
+                  </a>
+                ) : (
+                  <div
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      padding: '0.55rem 1rem',
+                      borderRadius: 'var(--radius-full)',
+                      background: 'rgba(6, 182, 212, 0.08)',
+                      border: '1px solid rgba(6, 182, 212, 0.25)',
+                      color: 'var(--accent-cyan)',
+                      fontSize: '0.8rem',
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    <span>Play Store / Web: Coming Soon</span>
+                  </div>
+                )}
 
-              {selectedProject.githubUrl ? (
-                <a
-                  href={selectedProject.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary"
-                  onClick={() => sfx.playClick()}
-                  style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
-                >
-                  <GithubIcon size={16} />
-                  <span>View Source Code</span>
-                </a>
-              ) : (
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    padding: '0.55rem 1rem',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'rgba(255, 255, 255, 0.04)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    color: 'var(--text-muted)',
-                    fontSize: '0.8rem',
-                    fontFamily: 'var(--font-mono)',
-                  }}
-                >
-                  <GithubIcon size={14} />
-                  <span>Repository: Coming Soon</span>
-                </div>
-              )}
-            </div>
+                {selectedProject.githubUrl ? (
+                  <a
+                    href={selectedProject.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                    onClick={() => sfx.playClick()}
+                    style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
+                  >
+                    <GithubIcon size={16} />
+                    <span>View Source Code</span>
+                  </a>
+                ) : (
+                  <div
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      padding: '0.55rem 1rem',
+                      borderRadius: 'var(--radius-full)',
+                      background: 'rgba(255, 255, 255, 0.04)',
+                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      color: 'var(--text-muted)',
+                      fontSize: '0.8rem',
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    <GithubIcon size={14} />
+                    <span>Repository: Coming Soon</span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}

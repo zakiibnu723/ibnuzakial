@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <div style={{ color: 'var(--text-muted)', fontSize: '0.825rem' }}>
-              Fullstack Web & Mobile Developer • UIN Sunan Kalijaga
+              Fullstack Web & Mobile Developer | IoT Integration • UIN Sunan Kalijaga
             </div>
           </div>
 

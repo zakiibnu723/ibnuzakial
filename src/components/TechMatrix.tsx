@@ -59,8 +59,8 @@ export const TechMatrix: React.FC = () => {
     { id: 'all', label: 'All Technologies' },
     { id: 'frontend', label: 'Frontend' },
     { id: 'backend', label: 'Backend & DB' },
-    { id: 'mobile', label: 'Android Kotlin' },
-    { id: 'tools', label: 'Tools & AI Model' },
+    { id: 'mobile', label: 'Mobile Engineering' },
+    { id: 'tools', label: 'Tools & IoT' },
   ];
 
   const filteredTech = activeTab === 'all'

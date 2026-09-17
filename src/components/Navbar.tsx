@@ -117,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv }) => {
               <span className="live-indicator" style={{ width: '7px', height: '7px' }} />
             </div>
             <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', lineHeight: 1.2, marginTop: '2px' }}>
-              Fullstack & Mobile Developer
+              Fullstack, Mobile & IoT Developer
             </div>
           </div>
         </a>

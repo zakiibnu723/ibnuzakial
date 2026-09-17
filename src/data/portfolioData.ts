@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  category: 'all' | 'web' | 'mobile';
+  category: 'all' | 'web' | 'mobile' | 'iot';
   categoryLabel: string;
   description: string;
   longDescription: string;
@@ -12,6 +12,7 @@ export interface Project {
   images?: string[];
   githubUrl: string;
   liveUrl?: string;
+  hideExternalLinks?: boolean;
   featured: boolean;
   highlights: string[];
 }
@@ -26,9 +27,9 @@ export interface TechItem {
 export const PORTFOLIO_DATA = {
   profile: {
     name: "Ibnu Zaki Al",
-    title: "Fullstack Web & Mobile Developer",
+    title: "Fullstack Web & Mobile Developer | IoT Integration",
     subtitle: "Informatics • UIN Sunan Kalijaga Yogyakarta (2022 — 2026 Expected)",
-    shortBio: "Fullstack Web & Mobile Developer focused on engineering production-ready applications and scalable digital solutions. I transform real-world problems into high-performance web platforms and intuitive mobile apps that prioritize smooth user experiences, solid architecture, and measurable impact.",
+    shortBio: "Fullstack Web & Mobile Developer with IoT Integration capabilities, focused on engineering production-ready web applications, intuitive mobile software, and real-time telemetry architectures. Dedicated to building scalable, high-impact digital solutions with clean architecture and solid user experiences.",
     location: "Indonesia (Open to On-site, Hybrid & Remote)",
     status: "Available for Hire",
     email: "zakiibnu723@gmail.com",
@@ -37,9 +38,9 @@ export const PORTFOLIO_DATA = {
     github: "https://github.com/zakiibnu723",
     linkedin: "https://linkedin.com/in/ibnuzakial",
     stats: [
-      { label: "Completed Projects", value: "12+" },
+      { label: "Completed Projects", value: "14+" },
       { label: "National Awards", value: "3" },
-      { label: "Web & Mobile Apps", value: "6+" },
+      { label: "Web, Mobile & IoT", value: "8+" },
     ]
   },
 
@@ -163,6 +164,64 @@ export const PORTFOLIO_DATA = {
         "Real-time JSON validation with precise error indicators and line pinpointing",
         "One-click formatting, beautification, clipboard copying, and file export for rapid testing"
       ]
+    },
+    {
+      id: "esp32-iot-telemetry",
+      title: "ESP32 End-to-End IoT Telemetry & Monitoring Architecture",
+      subtitle: "Closed-Loop Embedded IoT Telemetry & Centralized Web Platform",
+      category: "iot",
+      categoryLabel: "IoT & Embedded Systems",
+      description: "Architected a complete closed-loop IoT ecosystem integrating multi-node ESP32 devices, a centralized HTTP REST API, SQL Server, and an interactive React web dashboard.",
+      longDescription: "A complete end-to-end telemetry pipeline connecting edge microcontrollers with enterprise web applications. Standardized bi-directional JSON payload formats for real-time sensor ingestion (POST) and dynamic web metric queries (GET). Built a responsive dashboard featuring multi-device status monitoring, historical time-series charts, and data filtering by device ID and timestamps.",
+      tags: ["ESP32", "IoT Sensors", "HTTP REST API", "SQL Server", "React.js", "C/C++", "Telemetry"],
+      metrics: [
+        { label: "Hardware", value: "Multi-Node ESP32" },
+        { label: "Protocol", value: "HTTP REST JSON" },
+        { label: "Storage", value: "SQL Server" }
+      ],
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+      ],
+      githubUrl: "",
+      liveUrl: "",
+      hideExternalLinks: true,
+      featured: true,
+      highlights: [
+        "Architected a complete closed-loop IoT ecosystem integrating multi-node ESP32 devices, centralized HTTP REST API, SQL Server, and interactive React web dashboard",
+        "Standardized bi-directional JSON payload formats for real-time sensor ingestion (POST) and dynamic web metric queries (GET)",
+        "Built a responsive dashboard featuring multi-device status monitoring, historical time-series charts, and data filtering by device ID and timestamps",
+        "Robust edge network reconnection routines ensuring zero data loss during intermittent Wi-Fi dropouts"
+      ]
+    },
+    {
+      id: "esp32-environmental-logger",
+      title: "ESP32 Multi-Sensor Environmental Data Logger",
+      subtitle: "Edge Multi-Variable Logging & Analytical Time-Series Platform",
+      category: "iot",
+      categoryLabel: "IoT & Embedded Systems",
+      description: "Built an edge data logging system capturing multi-variable environmental and inertial data at scheduled intervals using an ESP32 and precision sensors (DHT22, DS18B20, MPU6050, RTC).",
+      longDescription: "Engineered an industrial-grade edge logging solution to monitor multi-point temperature, humidity, and vibration parameters. Optimized network reliability by bundling timestamped sensor packets with fallback local queuing for uninterrupted telemetry transmission, complemented by an analytical React visualizer.",
+      tags: ["ESP32", "DHT22 / DS18B20", "MPU6050", "RTC Module", "Wi-Fi", "SQL Server", "React.js"],
+      metrics: [
+        { label: "Sensors", value: "DHT22 / DS18B20 / MPU" },
+        { label: "Edge Sync", value: "RTC Timestamped" },
+        { label: "Reliability", value: "Fallback Queuing" }
+      ],
+      image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=1200&auto=format&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=1200&auto=format&fit=crop"
+      ],
+      githubUrl: "",
+      liveUrl: "",
+      hideExternalLinks: true,
+      featured: true,
+      highlights: [
+        "Built an edge data logging system capturing multi-variable environmental and inertial data at scheduled intervals using an ESP32 and precision sensors",
+        "Optimized network reliability by bundling timestamped sensor packets with fallback queuing for uninterrupted telemetry transmission",
+        "Delivered a web visualizer enabling granular date-range filtering, device selection, and exportable analytical charts",
+        "Integrated precision hardware RTC module ensuring accurate time-series logging during power cycles"
+      ]
     }
   ] as Project[],
 
@@ -191,7 +250,9 @@ export const PORTFOLIO_DATA = {
     { name: "Kotlin", category: "mobile", icon: "Smartphone", badge: "Android Core" },
     { name: "Jetpack Compose", category: "mobile", icon: "Layers", badge: "Modern UI" },
 
-    // Tools & Engineering
+    // Tools & IoT
+    { name: "ESP32", category: "tools", icon: "Cpu", badge: "Microcontroller" },
+    { name: "IoT Sensors", category: "tools", icon: "Zap", badge: "Hardware" },
     { name: "Git & GitHub", category: "tools", icon: "GitBranch", badge: "VCS" },
     { name: "Leaflet / Geospatial", category: "tools", icon: "Globe", badge: "Mapping" },
     { name: "Chart.js", category: "tools", icon: "Activity", badge: "Analytics" },

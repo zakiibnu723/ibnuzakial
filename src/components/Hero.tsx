@@ -98,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
             }}
           >
             <Sparkles size={13} />
-            <span>WEB & MOBILE DEVELOPER</span>
+            <span>FULLSTACK, MOBILE & IOT</span>
           </div>
         </div>
 
@@ -136,7 +136,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
                 marginBottom: '1.35rem',
               }}
             >
-              Hi, I'm <strong style={{ color: '#fff' }}>{PORTFOLIO_DATA.profile.name}</strong>. Fullstack Web & Mobile Developer focused on engineering <strong style={{ color: '#c7d2fe' }}>production-ready applications</strong> and scalable digital solutions. I transform real-world problems into high-performance web platforms and intuitive mobile apps that prioritize smooth user experiences, solid architecture, and measurable impact.
+              Hi, I'm <strong style={{ color: '#fff' }}>{PORTFOLIO_DATA.profile.name}</strong>. Fullstack Web & Mobile Developer with IoT Integration capabilities, focused on engineering <strong style={{ color: '#c7d2fe' }}>production-ready web systems, mobile apps, and real-time telemetry architectures</strong>. I transform real-world problems into scalable, reliable digital platforms that prioritize seamless user experiences and solid engineering.
             </p>
 
             {/* Quick Action CTAs */}
@@ -187,7 +187,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
               <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', marginRight: '0.3rem' }}>
                 STACK:
               </span>
-              {['Next.js', 'React', 'TypeScript', 'Node.js', 'Flutter', 'Kotlin', 'Prisma', 'PostgreSQL'].map((tech) => (
+              {['Next.js', 'React', 'TypeScript', 'Node.js', 'Flutter', 'Kotlin', 'ESP32 / IoT', 'PostgreSQL'].map((tech) => (
                 <span key={tech} className="tech-pill" style={{ padding: '0.25rem 0.65rem', fontSize: '0.72rem' }}>
                   {tech}
                 </span>
@@ -280,7 +280,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
 
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <span style={{ color: 'var(--text-muted)' }}>Focus:</span>
-                  <span style={{ color: '#c7d2fe', fontWeight: 500 }}>Web & Mobile Engineering</span>
+                  <span style={{ color: '#c7d2fe', fontWeight: 500 }}>Web, Mobile & IoT Integration</span>
                 </div>
               </div>
 
